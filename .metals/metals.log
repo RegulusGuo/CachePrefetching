@@ -51,3 +51,1322 @@ java.nio.file.NoSuchFileException: /home/ruorong/hardware/CachePrefetching/chise
 	at java.lang.Thread.run(Thread.java:829)
 [0m
 [0m2021.10.21 19:01:50 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/something.scala[0m
+Oct 21, 2021 7:33:03 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 37
+[0m2021.10.21 22:35:21 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/something.scala[0m
+[0m2021.10.21 22:35:34 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/DCache.scala[0m
+[0m2021.10.21 22:35:49 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/DCache.scala[0m
+[0m2021.10.21 22:37:57 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/const/Config.scala[0m
+Oct 21, 2021 10:40:21 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.lang.IllegalArgumentException: 7 is not a valid line number, allowed [0..6]
+	at scala.meta.internal.inputs.InternalInput.lineToOffset(InternalInput.scala:37)
+	at scala.meta.internal.inputs.InternalInput.lineToOffset$(InternalInput.scala:32)
+	at scala.meta.inputs.Input$VirtualFile.lineToOffset(Input.scala:80)
+	at scala.meta.inputs.Position$Range$.lineLength$1(Position.scala:57)
+	at scala.meta.inputs.Position$Range$.apply(Position.scala:60)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionPositionLspInverse.toMeta(MtagsEnrichments.scala:121)
+	at scala.meta.internal.parsing.Trees.$anonfun$findLastEnclosingAt$4(Trees.scala:77)
+	at scala.Option.flatMap(Option.scala:271)
+	at scala.meta.internal.parsing.Trees.findLastEnclosingAt(Trees.scala:76)
+	at scala.meta.internal.metals.codeactions.PatternMatchRefactor.contribute(PatternMatchRefactor.scala:96)
+	at scala.meta.internal.metals.CodeActionProvider$$anonfun$1.applyOrElse(CodeActionProvider.scala:62)
+	at scala.meta.internal.metals.CodeActionProvider$$anonfun$1.applyOrElse(CodeActionProvider.scala:61)
+	at scala.collection.immutable.List.collect(List.scala:323)
+	at scala.meta.internal.metals.CodeActionProvider.codeActions(CodeActionProvider.scala:61)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeAction$1(MetalsLanguageServer.scala:1518)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLanguageServer.codeAction(MetalsLanguageServer.scala:1517)
+	... 15 more
+
+[0m2021.10.21 22:40:39 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/const/Config.scala[0m
+Oct 21, 2021 10:40:41 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 218
+Oct 21, 2021 10:46:09 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 273 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 273 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 10:48:43 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 325 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 325 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 10:49:06 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 318 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 318 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 10:49:07 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 318 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 318 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 10:49:07 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 374 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 374 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 10:49:44 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 346 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 346 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 10:49:45 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 346 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 346 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 10:49:51 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 346 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 346 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 10:51:36 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 372 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 372 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 10:58:02 PM scala.meta.internal.pc.CompletionProvider expected$1
+WARNING: null
+Oct 21, 2021 10:58:04 PM scala.meta.internal.pc.CompletionProvider expected$1
+WARNING: null
+Oct 21, 2021 10:58:22 PM scala.meta.internal.pc.CompletionProvider expected$1
+WARNING: null
+Oct 21, 2021 11:01:26 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 483 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 483 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 11:01:27 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 330 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 330 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 11:01:27 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 330 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 330 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 11:01:41 PM scala.meta.internal.pc.CompletionProvider expected$1
+WARNING: null
+Oct 21, 2021 11:01:42 PM scala.meta.internal.pc.CompletionProvider expected$1
+WARNING: null
+Oct 21, 2021 11:01:42 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.lang.IllegalArgumentException: 31 is not a valid line number, allowed [0..30]
+	at scala.meta.internal.inputs.InternalInput.lineToOffset(InternalInput.scala:37)
+	at scala.meta.internal.inputs.InternalInput.lineToOffset$(InternalInput.scala:32)
+	at scala.meta.inputs.Input$VirtualFile.lineToOffset(Input.scala:80)
+	at scala.meta.inputs.Position$Range$.lineLength$1(Position.scala:57)
+	at scala.meta.inputs.Position$Range$.apply(Position.scala:60)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionPositionLspInverse.toMeta(MtagsEnrichments.scala:121)
+	at scala.meta.internal.parsing.Trees.$anonfun$findLastEnclosingAt$4(Trees.scala:77)
+	at scala.Option.flatMap(Option.scala:271)
+	at scala.meta.internal.parsing.Trees.findLastEnclosingAt(Trees.scala:76)
+	at scala.meta.internal.metals.codeactions.PatternMatchRefactor.contribute(PatternMatchRefactor.scala:96)
+	at scala.meta.internal.metals.CodeActionProvider$$anonfun$1.applyOrElse(CodeActionProvider.scala:62)
+	at scala.meta.internal.metals.CodeActionProvider$$anonfun$1.applyOrElse(CodeActionProvider.scala:61)
+	at scala.collection.immutable.List.collect(List.scala:323)
+	at scala.meta.internal.metals.CodeActionProvider.codeActions(CodeActionProvider.scala:61)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeAction$1(MetalsLanguageServer.scala:1518)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLanguageServer.codeAction(MetalsLanguageServer.scala:1517)
+	... 15 more
+
+Oct 21, 2021 11:01:43 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.lang.IllegalArgumentException: 31 is not a valid line number, allowed [0..30]
+	at scala.meta.internal.inputs.InternalInput.lineToOffset(InternalInput.scala:37)
+	at scala.meta.internal.inputs.InternalInput.lineToOffset$(InternalInput.scala:32)
+	at scala.meta.inputs.Input$VirtualFile.lineToOffset(Input.scala:80)
+	at scala.meta.inputs.Position$Range$.lineLength$1(Position.scala:57)
+	at scala.meta.inputs.Position$Range$.apply(Position.scala:60)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionPositionLspInverse.toMeta(MtagsEnrichments.scala:121)
+	at scala.meta.internal.parsing.Trees.$anonfun$findLastEnclosingAt$4(Trees.scala:77)
+	at scala.Option.flatMap(Option.scala:271)
+	at scala.meta.internal.parsing.Trees.findLastEnclosingAt(Trees.scala:76)
+	at scala.meta.internal.metals.codeactions.PatternMatchRefactor.contribute(PatternMatchRefactor.scala:96)
+	at scala.meta.internal.metals.CodeActionProvider$$anonfun$1.applyOrElse(CodeActionProvider.scala:62)
+	at scala.meta.internal.metals.CodeActionProvider$$anonfun$1.applyOrElse(CodeActionProvider.scala:61)
+	at scala.collection.immutable.List.collect(List.scala:323)
+	at scala.meta.internal.metals.CodeActionProvider.codeActions(CodeActionProvider.scala:61)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeAction$1(MetalsLanguageServer.scala:1518)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLanguageServer.codeAction(MetalsLanguageServer.scala:1517)
+	... 15 more
+
+Oct 21, 2021 11:07:48 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 525 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 525 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 11:07:48 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 247 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 247 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 11:07:48 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 247 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 247 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 11:08:44 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 330 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 330 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 11:08:44 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 330 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 330 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 11:08:44 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 330 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 330 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 11:10:50 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 606 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 606 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 11:10:51 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 330 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 330 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 11:47:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.lang.IllegalArgumentException: 34 is not a valid line number, allowed [0..30]
+	at scala.meta.internal.inputs.InternalInput.lineToOffset(InternalInput.scala:37)
+	at scala.meta.internal.inputs.InternalInput.lineToOffset$(InternalInput.scala:32)
+	at scala.meta.inputs.Input$VirtualFile.lineToOffset(Input.scala:80)
+	at scala.meta.inputs.Position$Range$.apply(Position.scala:59)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionPositionLspInverse.toMeta(MtagsEnrichments.scala:121)
+	at scala.meta.internal.parsing.Trees.$anonfun$findLastEnclosingAt$4(Trees.scala:77)
+	at scala.Option.flatMap(Option.scala:271)
+	at scala.meta.internal.parsing.Trees.findLastEnclosingAt(Trees.scala:76)
+	at scala.meta.internal.metals.codeactions.PatternMatchRefactor.contribute(PatternMatchRefactor.scala:96)
+	at scala.meta.internal.metals.CodeActionProvider$$anonfun$1.applyOrElse(CodeActionProvider.scala:62)
+	at scala.meta.internal.metals.CodeActionProvider$$anonfun$1.applyOrElse(CodeActionProvider.scala:61)
+	at scala.collection.immutable.List.collect(List.scala:323)
+	at scala.meta.internal.metals.CodeActionProvider.codeActions(CodeActionProvider.scala:61)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeAction$1(MetalsLanguageServer.scala:1518)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLanguageServer.codeAction(MetalsLanguageServer.scala:1517)
+	... 15 more
+
+Oct 21, 2021 11:48:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.lang.IllegalArgumentException: 34 is not a valid line number, allowed [0..30]
+	at scala.meta.internal.inputs.InternalInput.lineToOffset(InternalInput.scala:37)
+	at scala.meta.internal.inputs.InternalInput.lineToOffset$(InternalInput.scala:32)
+	at scala.meta.inputs.Input$VirtualFile.lineToOffset(Input.scala:80)
+	at scala.meta.inputs.Position$Range$.apply(Position.scala:59)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionPositionLspInverse.toMeta(MtagsEnrichments.scala:121)
+	at scala.meta.internal.parsing.Trees.$anonfun$findLastEnclosingAt$4(Trees.scala:77)
+	at scala.Option.flatMap(Option.scala:271)
+	at scala.meta.internal.parsing.Trees.findLastEnclosingAt(Trees.scala:76)
+	at scala.meta.internal.metals.codeactions.PatternMatchRefactor.contribute(PatternMatchRefactor.scala:96)
+	at scala.meta.internal.metals.CodeActionProvider$$anonfun$1.applyOrElse(CodeActionProvider.scala:62)
+	at scala.meta.internal.metals.CodeActionProvider$$anonfun$1.applyOrElse(CodeActionProvider.scala:61)
+	at scala.collection.immutable.List.collect(List.scala:323)
+	at scala.meta.internal.metals.CodeActionProvider.codeActions(CodeActionProvider.scala:61)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeAction$1(MetalsLanguageServer.scala:1518)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLanguageServer.codeAction(MetalsLanguageServer.scala:1517)
+	... 15 more
+
+Oct 21, 2021 11:48:22 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 248 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 248 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 11:48:22 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.lang.IllegalArgumentException: 34 is not a valid line number, allowed [0..30]
+	at scala.meta.internal.inputs.InternalInput.lineToOffset(InternalInput.scala:37)
+	at scala.meta.internal.inputs.InternalInput.lineToOffset$(InternalInput.scala:32)
+	at scala.meta.inputs.Input$VirtualFile.lineToOffset(Input.scala:80)
+	at scala.meta.inputs.Position$Range$.apply(Position.scala:59)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionPositionLspInverse.toMeta(MtagsEnrichments.scala:121)
+	at scala.meta.internal.parsing.Trees.$anonfun$findLastEnclosingAt$4(Trees.scala:77)
+	at scala.Option.flatMap(Option.scala:271)
+	at scala.meta.internal.parsing.Trees.findLastEnclosingAt(Trees.scala:76)
+	at scala.meta.internal.metals.codeactions.PatternMatchRefactor.contribute(PatternMatchRefactor.scala:96)
+	at scala.meta.internal.metals.CodeActionProvider$$anonfun$1.applyOrElse(CodeActionProvider.scala:62)
+	at scala.meta.internal.metals.CodeActionProvider$$anonfun$1.applyOrElse(CodeActionProvider.scala:61)
+	at scala.collection.immutable.List.collect(List.scala:323)
+	at scala.meta.internal.metals.CodeActionProvider.codeActions(CodeActionProvider.scala:61)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeAction$1(MetalsLanguageServer.scala:1518)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLanguageServer.codeAction(MetalsLanguageServer.scala:1517)
+	... 15 more
+
+Oct 21, 2021 11:48:23 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 248 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 248 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 11:48:23 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.lang.IllegalArgumentException: 34 is not a valid line number, allowed [0..30]
+	at scala.meta.internal.inputs.InternalInput.lineToOffset(InternalInput.scala:37)
+	at scala.meta.internal.inputs.InternalInput.lineToOffset$(InternalInput.scala:32)
+	at scala.meta.inputs.Input$VirtualFile.lineToOffset(Input.scala:80)
+	at scala.meta.inputs.Position$Range$.apply(Position.scala:59)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionPositionLspInverse.toMeta(MtagsEnrichments.scala:121)
+	at scala.meta.internal.parsing.Trees.$anonfun$findLastEnclosingAt$4(Trees.scala:77)
+	at scala.Option.flatMap(Option.scala:271)
+	at scala.meta.internal.parsing.Trees.findLastEnclosingAt(Trees.scala:76)
+	at scala.meta.internal.metals.codeactions.PatternMatchRefactor.contribute(PatternMatchRefactor.scala:96)
+	at scala.meta.internal.metals.CodeActionProvider$$anonfun$1.applyOrElse(CodeActionProvider.scala:62)
+	at scala.meta.internal.metals.CodeActionProvider$$anonfun$1.applyOrElse(CodeActionProvider.scala:61)
+	at scala.collection.immutable.List.collect(List.scala:323)
+	at scala.meta.internal.metals.CodeActionProvider.codeActions(CodeActionProvider.scala:61)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeAction$1(MetalsLanguageServer.scala:1518)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLanguageServer.codeAction(MetalsLanguageServer.scala:1517)
+	... 15 more
+
+Oct 21, 2021 11:48:24 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 248 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 248 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 11:48:24 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 248 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 248 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 11:48:24 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 248 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 248 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 11:48:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.lang.IllegalArgumentException: 34 is not a valid line number, allowed [0..30]
+	at scala.meta.internal.inputs.InternalInput.lineToOffset(InternalInput.scala:37)
+	at scala.meta.internal.inputs.InternalInput.lineToOffset$(InternalInput.scala:32)
+	at scala.meta.inputs.Input$VirtualFile.lineToOffset(Input.scala:80)
+	at scala.meta.inputs.Position$Range$.apply(Position.scala:59)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionPositionLspInverse.toMeta(MtagsEnrichments.scala:121)
+	at scala.meta.internal.parsing.Trees.$anonfun$findLastEnclosingAt$4(Trees.scala:77)
+	at scala.Option.flatMap(Option.scala:271)
+	at scala.meta.internal.parsing.Trees.findLastEnclosingAt(Trees.scala:76)
+	at scala.meta.internal.metals.codeactions.PatternMatchRefactor.contribute(PatternMatchRefactor.scala:96)
+	at scala.meta.internal.metals.CodeActionProvider$$anonfun$1.applyOrElse(CodeActionProvider.scala:62)
+	at scala.meta.internal.metals.CodeActionProvider$$anonfun$1.applyOrElse(CodeActionProvider.scala:61)
+	at scala.collection.immutable.List.collect(List.scala:323)
+	at scala.meta.internal.metals.CodeActionProvider.codeActions(CodeActionProvider.scala:61)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeAction$1(MetalsLanguageServer.scala:1518)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLanguageServer.codeAction(MetalsLanguageServer.scala:1517)
+	... 15 more
+
+Oct 21, 2021 11:48:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.lang.IllegalArgumentException: 34 is not a valid line number, allowed [0..30]
+	at scala.meta.internal.inputs.InternalInput.lineToOffset(InternalInput.scala:37)
+	at scala.meta.internal.inputs.InternalInput.lineToOffset$(InternalInput.scala:32)
+	at scala.meta.inputs.Input$VirtualFile.lineToOffset(Input.scala:80)
+	at scala.meta.inputs.Position$Range$.apply(Position.scala:59)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionPositionLspInverse.toMeta(MtagsEnrichments.scala:121)
+	at scala.meta.internal.parsing.Trees.$anonfun$findLastEnclosingAt$4(Trees.scala:77)
+	at scala.Option.flatMap(Option.scala:271)
+	at scala.meta.internal.parsing.Trees.findLastEnclosingAt(Trees.scala:76)
+	at scala.meta.internal.metals.codeactions.PatternMatchRefactor.contribute(PatternMatchRefactor.scala:96)
+	at scala.meta.internal.metals.CodeActionProvider$$anonfun$1.applyOrElse(CodeActionProvider.scala:62)
+	at scala.meta.internal.metals.CodeActionProvider$$anonfun$1.applyOrElse(CodeActionProvider.scala:61)
+	at scala.collection.immutable.List.collect(List.scala:323)
+	at scala.meta.internal.metals.CodeActionProvider.codeActions(CodeActionProvider.scala:61)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeAction$1(MetalsLanguageServer.scala:1518)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLanguageServer.codeAction(MetalsLanguageServer.scala:1517)
+	... 15 more
+
+Oct 21, 2021 11:48:28 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.request(GenericEndpoint.java:120)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleRequest(RemoteEndpoint.java:261)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:190)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor9.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.lang.IllegalArgumentException: 34 is not a valid line number, allowed [0..30]
+	at scala.meta.internal.inputs.InternalInput.lineToOffset(InternalInput.scala:37)
+	at scala.meta.internal.inputs.InternalInput.lineToOffset$(InternalInput.scala:32)
+	at scala.meta.inputs.Input$VirtualFile.lineToOffset(Input.scala:80)
+	at scala.meta.inputs.Position$Range$.apply(Position.scala:59)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionPositionLspInverse.toMeta(MtagsEnrichments.scala:121)
+	at scala.meta.internal.parsing.Trees.$anonfun$findLastEnclosingAt$4(Trees.scala:77)
+	at scala.Option.flatMap(Option.scala:271)
+	at scala.meta.internal.parsing.Trees.findLastEnclosingAt(Trees.scala:76)
+	at scala.meta.internal.metals.codeactions.PatternMatchRefactor.contribute(PatternMatchRefactor.scala:96)
+	at scala.meta.internal.metals.CodeActionProvider$$anonfun$1.applyOrElse(CodeActionProvider.scala:62)
+	at scala.meta.internal.metals.CodeActionProvider$$anonfun$1.applyOrElse(CodeActionProvider.scala:61)
+	at scala.collection.immutable.List.collect(List.scala:323)
+	at scala.meta.internal.metals.CodeActionProvider.codeActions(CodeActionProvider.scala:61)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$codeAction$1(MetalsLanguageServer.scala:1518)
+	at scala.meta.internal.metals.CancelTokens$.future(CancelTokens.scala:38)
+	at scala.meta.internal.metals.MetalsLanguageServer.codeAction(MetalsLanguageServer.scala:1517)
+	... 15 more
+
+Oct 21, 2021 11:48:30 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 248 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 248 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 11:48:31 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 248 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 248 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 11:48:33 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 248 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 248 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 11:48:33 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 248 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 248 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 11:48:33 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 248 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 248 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 11:49:06 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 552 is not a valid offset, allowed [0..1]
+java.lang.IllegalArgumentException: 552 is not a valid offset, allowed [0..1]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:293)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+[0m2021.10.21 23:49:12 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/DCache.scala[0m
+Oct 21, 2021 11:54:34 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Oct 21, 2021 11:54:34 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Oct 21, 2021 11:54:36 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Oct 21, 2021 11:55:18 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Oct 21, 2021 11:55:21 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Oct 21, 2021 11:55:21 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 800 is not a valid offset, allowed [0..777]
+java.lang.IllegalArgumentException: 800 is not a valid offset, allowed [0..777]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:297)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 11:55:21 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Oct 21, 2021 11:55:34 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Oct 21, 2021 11:55:35 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Oct 21, 2021 11:55:35 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 830 is not a valid offset, allowed [0..777]
+java.lang.IllegalArgumentException: 830 is not a valid offset, allowed [0..777]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:297)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+Oct 21, 2021 11:55:37 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Oct 21, 2021 11:55:38 PM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Oct 21, 2021 11:55:38 PM scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: 833 is not a valid offset, allowed [0..777]
+java.lang.IllegalArgumentException: 833 is not a valid offset, allowed [0..777]
+	at scala.meta.internal.inputs.InternalInput.offsetToLine(InternalInput.scala:48)
+	at scala.meta.internal.inputs.InternalInput.offsetToLine$(InternalInput.scala:42)
+	at scala.meta.inputs.Input$VirtualFile.offsetToLine(Input.scala:80)
+	at scala.meta.inputs.Position$Range.startLine(Position.scala:37)
+	at scala.meta.internal.inputs.package$XtensionPositionToRange.toRange(package.scala:45)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.$anonfun$reportedDiagnostics$1(DiagnosticOps.scala:32)
+	at scala.collection.immutable.List.map(List.scala:297)
+	at scala.meta.internal.semanticdb.scalac.DiagnosticOps$XtensionCompilationUnitDiagnostics.reportedDiagnostics(DiagnosticOps.scala:11)
+	at scala.meta.internal.semanticdb.scalac.TextDocumentOps$XtensionCompilationUnitDocument.toTextDocument(TextDocumentOps.scala:775)
+	at scala.meta.internal.pc.SemanticdbTextDocumentProvider.textDocument(SemanticdbTextDocumentProvider.scala:51)
+
+[0m2021.10.22 00:05:02 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/IOBundles.scala[0m
+Oct 22, 2021 12:05:04 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3013
+Oct 22, 2021 12:05:12 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3025
+Oct 22, 2021 12:07:45 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3110
+[0m2021.10.22 00:09:50 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/const/Config.scala[0m
+Oct 22, 2021 12:09:51 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3339
+Oct 22, 2021 12:10:01 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3357
+Oct 22, 2021 12:12:38 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3854
+Oct 22, 2021 12:12:38 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3860
+[0m2021.10.22 00:13:14 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/const/CacheConfig.scala[0m
+Oct 22, 2021 12:13:19 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3871
+Oct 22, 2021 12:13:27 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3896
+Oct 22, 2021 12:13:36 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3922
+Oct 22, 2021 12:14:18 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4034
+[0m2021.10.22 00:14:20 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/const/CacheConfig.scala[0m
+Oct 22, 2021 12:14:21 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4040
+Oct 22, 2021 12:14:28 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4074
+Oct 22, 2021 12:14:31 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4084
+[0m2021.10.22 00:14:37 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/IOBundles.scala[0m
+Oct 22, 2021 12:14:38 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4099
+Oct 22, 2021 12:14:44 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4110
+Oct 22, 2021 12:14:47 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4119
+[0m2021.10.22 00:14:59 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/build.sbt[0m
+[0m2021.10.22 00:16:23 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/build.sbt[0m
+Oct 22, 2021 12:16:28 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4241
+Oct 22, 2021 12:16:30 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4248
+Oct 22, 2021 12:18:01 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: scala.reflect.internal.Symbols$CyclicReference: illegal cyclic reference involving class CacheCoreReq
+java.util.concurrent.CompletionException: scala.reflect.internal.Symbols$CyclicReference: illegal cyclic reference involving class CacheCoreReq
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:314)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:319)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2073)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:42)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:38)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: scala.reflect.internal.Symbols$CyclicReference: illegal cyclic reference involving class CacheCoreReq
+
+Oct 22, 2021 12:22:50 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.NullPointerException
+java.util.concurrent.CompletionException: java.lang.NullPointerException
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:314)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:319)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2073)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:42)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:38)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.NullPointerException
+	at scala.reflect.internal.Types.$anonfun$typeContainsTypeVar$2(Types.scala:4766)
+	at scala.reflect.internal.Types.$anonfun$typeContainsTypeVar$2$adapted(Types.scala:4766)
+	at scala.collection.LinearSeqOptimized.exists(LinearSeqOptimized.scala:95)
+	at scala.collection.LinearSeqOptimized.exists$(LinearSeqOptimized.scala:92)
+	at scala.collection.immutable.List.exists(List.scala:91)
+	at scala.reflect.internal.Types.defineBaseTypeSeqOfCompoundType(Types.scala:1495)
+	at scala.reflect.internal.Types.defineBaseTypeSeqOfCompoundType$(Types.scala:1487)
+	at scala.reflect.internal.SymbolTable.defineBaseTypeSeqOfCompoundType(SymbolTable.scala:28)
+	at scala.reflect.internal.Types$CompoundType.baseTypeSeq(Types.scala:1395)
+	at scala.reflect.internal.Types$Type.baseTypeIndex(Types.scala:922)
+	at scala.reflect.internal.Types$CompoundType.baseType(Types.scala:1440)
+	at scala.reflect.internal.Types$TypeRef.baseType(Types.scala:2193)
+	at scala.reflect.internal.Types$SimpleTypeProxy.baseType(Types.scala:169)
+	at scala.reflect.internal.Types$SimpleTypeProxy.baseType$(Types.scala:169)
+	at scala.reflect.internal.Types$SingletonType.baseType(Types.scala:1108)
+	at scala.reflect.internal.tpe.TypeMaps$AsSeenFromMap.loop$4(TypeMaps.scala:709)
+	at scala.reflect.internal.tpe.TypeMaps$AsSeenFromMap.thisTypeAsSeen(TypeMaps.scala:715)
+	at scala.reflect.internal.tpe.TypeMaps$AsSeenFromMap.apply(TypeMaps.scala:510)
+	at scala.reflect.internal.tpe.TypeMaps$TypeMap.mapOver(TypeMaps.scala:114)
+	at scala.reflect.internal.tpe.TypeMaps$AsSeenFromMap.apply(TypeMaps.scala:513)
+	at scala.reflect.internal.tpe.TypeMaps$TypeMap.$anonfun$mapOver$3(TypeMaps.scala:157)
+	at scala.reflect.internal.tpe.TypeMaps$TypeMap.mapOver(TypeMaps.scala:216)
+	at scala.reflect.internal.tpe.TypeMaps$AsSeenFromMap.apply(TypeMaps.scala:513)
+	at scala.reflect.internal.tpe.TypeMaps$TypeMap.applyToSymbolInfo(TypeMaps.scala:232)
+	at scala.reflect.internal.tpe.TypeMaps$TypeMap.loop$1(TypeMaps.scala:242)
+	at scala.reflect.internal.tpe.TypeMaps$TypeMap.firstChangedSymbol(TypeMaps.scala:246)
+	at scala.reflect.internal.tpe.TypeMaps$TypeMap.mapOver(TypeMaps.scala:259)
+	at scala.reflect.internal.tpe.TypeMaps$TypeMap.$anonfun$mapOver$2(TypeMaps.scala:142)
+	at scala.reflect.internal.tpe.TypeMaps$TypeMap.mapOver(TypeMaps.scala:216)
+	at scala.reflect.internal.tpe.TypeMaps$AsSeenFromMap.apply(TypeMaps.scala:513)
+	at scala.reflect.internal.Types$Type.asSeenFrom(Types.scala:704)
+	at scala.reflect.internal.Types$Type.computeMemberType(Types.scala:739)
+	at scala.reflect.internal.Symbols$MethodSymbol.typeAsMemberOf(Symbols.scala:3028)
+	at scala.reflect.internal.Types$Type.memberType(Types.scala:730)
+	at scala.meta.internal.pc.completions.Completions.detailString(Completions.scala:263)
+	at scala.meta.internal.pc.completions.Completions.detailString$(Completions.scala:257)
+	at scala.meta.internal.pc.MetalsGlobal.detailString(MetalsGlobal.scala:30)
+	at scala.meta.internal.pc.CompletionProvider.$anonfun$completions$1(CompletionProvider.scala:83)
+	at scala.collection.Iterator$$anon$10.next(Iterator.scala:461)
+	at scala.collection.Iterator.toStream(Iterator.scala:1417)
+	at scala.collection.Iterator.toStream$(Iterator.scala:1416)
+	at scala.collection.AbstractIterator.toStream(Iterator.scala:1431)
+	at scala.collection.Iterator.$anonfun$toStream$1(Iterator.scala:1417)
+	at scala.collection.immutable.Stream$Cons.tail(Stream.scala:1173)
+	at scala.collection.immutable.Stream$Cons.tail(Stream.scala:1163)
+	at scala.collection.immutable.StreamIterator.$anonfun$next$1(Stream.scala:1061)
+	at scala.collection.immutable.StreamIterator$LazyCell.v$lzycompute(Stream.scala:1050)
+	at scala.collection.immutable.StreamIterator$LazyCell.v(Stream.scala:1050)
+	at scala.collection.immutable.StreamIterator.hasNext(Stream.scala:1055)
+	at scala.collection.convert.Wrappers$IteratorWrapper.hasNext(Wrappers.scala:32)
+	at org.eclipse.lsp4j.jsonrpc.json.adapters.CollectionTypeAdapter.write(CollectionTypeAdapter.java:134)
+	at org.eclipse.lsp4j.jsonrpc.json.adapters.CollectionTypeAdapter.write(CollectionTypeAdapter.java:40)
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.write(TypeAdapterRuntimeTypeWrapper.java:69)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$1.write(ReflectiveTypeAdapterFactory.java:127)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.write(ReflectiveTypeAdapterFactory.java:245)
+	at com.google.gson.Gson.toJson(Gson.java:704)
+	at org.eclipse.lsp4j.jsonrpc.json.adapters.MessageTypeAdapter.write(MessageTypeAdapter.java:423)
+	at org.eclipse.lsp4j.jsonrpc.json.adapters.MessageTypeAdapter.write(MessageTypeAdapter.java:55)
+	at com.google.gson.Gson.toJson(Gson.java:704)
+	at com.google.gson.Gson.toJson(Gson.java:683)
+	at org.eclipse.lsp4j.jsonrpc.json.MessageJsonHandler.serialize(MessageJsonHandler.java:145)
+	at org.eclipse.lsp4j.jsonrpc.json.MessageJsonHandler.serialize(MessageJsonHandler.java:140)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:59)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.lambda$handleRequest$1(RemoteEndpoint.java:281)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:714)
+	... 8 more
+
+Oct 22, 2021 12:22:50 AM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Oct 22, 2021 12:22:51 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4688
+Oct 22, 2021 12:23:15 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4789
+Oct 22, 2021 12:23:15 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4790
+[0m2021.10.22 00:23:15 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/IOBundles.scala[0m
+[0m2021.10.22 00:23:15 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/IOBundles.scala[0m
+Oct 22, 2021 12:23:15 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4792
+[0m2021.10.22 00:23:22 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/const/CacheConfig.scala[0m
+Oct 22, 2021 12:23:24 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4812
+Oct 22, 2021 12:23:29 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4818
+Oct 22, 2021 12:23:43 AM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Oct 22, 2021 12:23:56 AM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Oct 22, 2021 12:24:10 AM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+[0m2021.10.22 00:24:15 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/DCache.scala[0m
+Oct 22, 2021 12:24:18 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 5029
+Oct 22, 2021 12:24:18 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 5035
+Oct 22, 2021 12:24:19 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 5041
+Oct 22, 2021 12:26:44 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: java.lang.AssertionError: AssertionError (GSON 2.8.8): AssertionError (GSON 2.8.8): assertion failed: 
+  CacheCoreReq
+     while compiling: file:///home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/IOBundles.scala
+        during phase: globalPhase=<no phase>, enteringPhase=typer
+     library version: version 2.12.15
+    compiler version: version 2.12.15
+  reconstructed args: -classpath /home/ruorong/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.15/scala-library-2.12.15.jar -Ymacro-expand:discard -Ycache-plugin-class-loader:last-modified -Ypresentation-any-thread
+
+  last tree to typer: Ident(const)
+       tree position: line 4 of file:///home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/IOBundles.scala
+            tree tpe: const.type
+              symbol: final package const
+   symbol definition: final package const (a ModuleSymbol)
+      symbol package: <none>
+       symbol owners: package const
+           call site: <none> in <none>
+
+== Source file context for tree position ==
+
+     1 package cache
+     2 
+     3 import chisel3._
+     4 import const.CacheConfig
+     5 
+     6 // from the view of cache
+     7 class CacheCoreReq(cachelineBits: Int = 128, addrWidth: Int = 32) extends Bundle {
+java.util.concurrent.CompletionException: java.lang.AssertionError: AssertionError (GSON 2.8.8): AssertionError (GSON 2.8.8): assertion failed: 
+  CacheCoreReq
+     while compiling: file:///home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/IOBundles.scala
+        during phase: globalPhase=<no phase>, enteringPhase=typer
+     library version: version 2.12.15
+    compiler version: version 2.12.15
+  reconstructed args: -classpath /home/ruorong/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.15/scala-library-2.12.15.jar -Ymacro-expand:discard -Ycache-plugin-class-loader:last-modified -Ypresentation-any-thread
+
+  last tree to typer: Ident(const)
+       tree position: line 4 of file:///home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/IOBundles.scala
+            tree tpe: const.type
+              symbol: final package const
+   symbol definition: final package const (a ModuleSymbol)
+      symbol package: <none>
+       symbol owners: package const
+           call site: <none> in <none>
+
+== Source file context for tree position ==
+
+     1 package cache
+     2 
+     3 import chisel3._
+     4 import const.CacheConfig
+     5 
+     6 // from the view of cache
+     7 class CacheCoreReq(cachelineBits: Int = 128, addrWidth: Int = 32) extends Bundle {
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:314)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:319)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2073)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:42)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:38)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.AssertionError: AssertionError (GSON 2.8.8): AssertionError (GSON 2.8.8): assertion failed: 
+  CacheCoreReq
+     while compiling: file:///home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/IOBundles.scala
+        during phase: globalPhase=<no phase>, enteringPhase=typer
+     library version: version 2.12.15
+    compiler version: version 2.12.15
+  reconstructed args: -classpath /home/ruorong/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.15/scala-library-2.12.15.jar -Ymacro-expand:discard -Ycache-plugin-class-loader:last-modified -Ypresentation-any-thread
+
+  last tree to typer: Ident(const)
+       tree position: line 4 of file:///home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/IOBundles.scala
+            tree tpe: const.type
+              symbol: final package const
+   symbol definition: final package const (a ModuleSymbol)
+      symbol package: <none>
+       symbol owners: package const
+           call site: <none> in <none>
+
+== Source file context for tree position ==
+
+     1 package cache
+     2 
+     3 import chisel3._
+     4 import const.CacheConfig
+     5 
+     6 // from the view of cache
+     7 class CacheCoreReq(cachelineBits: Int = 128, addrWidth: Int = 32) extends Bundle {
+	at com.google.gson.Gson.toJson(Gson.java:708)
+	at com.google.gson.Gson.toJson(Gson.java:683)
+	at org.eclipse.lsp4j.jsonrpc.json.MessageJsonHandler.serialize(MessageJsonHandler.java:145)
+	at org.eclipse.lsp4j.jsonrpc.json.MessageJsonHandler.serialize(MessageJsonHandler.java:140)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:59)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.lambda$handleRequest$1(RemoteEndpoint.java:281)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:714)
+	... 8 more
+Caused by: java.lang.AssertionError: AssertionError (GSON 2.8.8): assertion failed: 
+  CacheCoreReq
+     while compiling: file:///home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/IOBundles.scala
+        during phase: globalPhase=<no phase>, enteringPhase=typer
+     library version: version 2.12.15
+    compiler version: version 2.12.15
+  reconstructed args: -classpath /home/ruorong/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.15/scala-library-2.12.15.jar -Ymacro-expand:discard -Ycache-plugin-class-loader:last-modified -Ypresentation-any-thread
+
+  last tree to typer: Ident(const)
+       tree position: line 4 of file:///home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/IOBundles.scala
+            tree tpe: const.type
+              symbol: final package const
+   symbol definition: final package const (a ModuleSymbol)
+      symbol package: <none>
+       symbol owners: package const
+           call site: <none> in <none>
+
+== Source file context for tree position ==
+
+     1 package cache
+     2 
+     3 import chisel3._
+     4 import const.CacheConfig
+     5 
+     6 // from the view of cache
+     7 class CacheCoreReq(cachelineBits: Int = 128, addrWidth: Int = 32) extends Bundle {
+	at com.google.gson.Gson.toJson(Gson.java:708)
+	at org.eclipse.lsp4j.jsonrpc.json.adapters.MessageTypeAdapter.write(MessageTypeAdapter.java:423)
+	at org.eclipse.lsp4j.jsonrpc.json.adapters.MessageTypeAdapter.write(MessageTypeAdapter.java:55)
+	at com.google.gson.Gson.toJson(Gson.java:704)
+	... 14 more
+Caused by: java.lang.AssertionError: assertion failed: 
+  CacheCoreReq
+     while compiling: file:///home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/IOBundles.scala
+        during phase: globalPhase=<no phase>, enteringPhase=typer
+     library version: version 2.12.15
+    compiler version: version 2.12.15
+  reconstructed args: -classpath /home/ruorong/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.15/scala-library-2.12.15.jar -Ymacro-expand:discard -Ycache-plugin-class-loader:last-modified -Ypresentation-any-thread
+
+  last tree to typer: Ident(const)
+       tree position: line 4 of file:///home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/IOBundles.scala
+            tree tpe: const.type
+              symbol: final package const
+   symbol definition: final package const (a ModuleSymbol)
+      symbol package: <none>
+       symbol owners: package const
+           call site: <none> in <none>
+
+== Source file context for tree position ==
+
+     1 package cache
+     2 
+     3 import chisel3._
+     4 import const.CacheConfig
+     5 
+     6 // from the view of cache
+     7 class CacheCoreReq(cachelineBits: Int = 128, addrWidth: Int = 32) extends Bundle {
+	at scala.reflect.internal.SymbolTable.throwAssertionError(SymbolTable.scala:185)
+	at scala.reflect.internal.Symbols$Symbol.completeInfo(Symbols.scala:1525)
+	at scala.reflect.internal.Symbols$Symbol.info(Symbols.scala:1514)
+	at scala.reflect.internal.Types$TypeRef.baseClasses(Types.scala:2280)
+	at scala.reflect.internal.Types$SimpleTypeProxy.baseClasses(Types.scala:172)
+	at scala.reflect.internal.Types$SimpleTypeProxy.baseClasses$(Types.scala:172)
+	at scala.reflect.internal.Types$SingletonType.baseClasses(Types.scala:1108)
+	at scala.reflect.internal.tpe.FindMembers$FindMemberBase.init(FindMembers.scala:36)
+	at scala.reflect.internal.tpe.FindMembers$FindMember.init(FindMembers.scala:257)
+	at scala.reflect.internal.Types$Type.$anonfun$findMember$1(Types.scala:1042)
+	at scala.reflect.internal.Types$Type.findMemberInternal$1(Types.scala:1041)
+	at scala.reflect.internal.Types$Type.findMember(Types.scala:1046)
+	at scala.reflect.internal.Types$Type.memberBasedOnName(Types.scala:672)
+	at scala.reflect.internal.Types$Type.member(Types.scala:636)
+	at scala.tools.nsc.typechecker.Contexts$SymbolLookup.apply(Contexts.scala:1173)
+	at scala.tools.nsc.typechecker.Contexts$Context.$anonfun$lookupSymbol$1(Contexts.scala:1051)
+	at scala.tools.nsc.typechecker.Contexts$Context.lookupSymbol(Contexts.scala:1051)
+	at scala.meta.internal.pc.Signatures$ShortenedNames$.$anonfun$synthesize$1(Signatures.scala:53)
+	at scala.meta.internal.pc.Signatures$ShortenedNames.tryShortenName(Signatures.scala:166)
+	at scala.meta.internal.pc.Signatures$ShortenedNames.tryShortenName(Signatures.scala:191)
+	at scala.meta.internal.pc.MetalsGlobal.loop$1(MetalsGlobal.scala:295)
+	at scala.meta.internal.pc.MetalsGlobal.loop$1(MetalsGlobal.scala:252)
+	at scala.meta.internal.pc.MetalsGlobal.shortType(MetalsGlobal.scala:367)
+	at scala.meta.internal.pc.Signatures$ShortenedNames$.synthesize(Signatures.scala:59)
+	at scala.meta.internal.pc.CompletionProvider.$anonfun$completions$1(CompletionProvider.scala:160)
+	at scala.collection.Iterator$$anon$10.next(Iterator.scala:461)
+	at scala.collection.Iterator.toStream(Iterator.scala:1417)
+	at scala.collection.Iterator.toStream$(Iterator.scala:1416)
+	at scala.collection.AbstractIterator.toStream(Iterator.scala:1431)
+	at scala.collection.Iterator.$anonfun$toStream$1(Iterator.scala:1417)
+	at scala.collection.immutable.Stream$Cons.tail(Stream.scala:1173)
+	at scala.collection.immutable.Stream$Cons.tail(Stream.scala:1163)
+	at scala.collection.immutable.StreamIterator.$anonfun$next$1(Stream.scala:1061)
+	at scala.collection.immutable.StreamIterator$LazyCell.v$lzycompute(Stream.scala:1050)
+	at scala.collection.immutable.StreamIterator$LazyCell.v(Stream.scala:1050)
+	at scala.collection.immutable.StreamIterator.hasNext(Stream.scala:1055)
+	at scala.collection.convert.Wrappers$IteratorWrapper.hasNext(Wrappers.scala:32)
+	at org.eclipse.lsp4j.jsonrpc.json.adapters.CollectionTypeAdapter.write(CollectionTypeAdapter.java:134)
+	at org.eclipse.lsp4j.jsonrpc.json.adapters.CollectionTypeAdapter.write(CollectionTypeAdapter.java:40)
+	at com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper.write(TypeAdapterRuntimeTypeWrapper.java:69)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$1.write(ReflectiveTypeAdapterFactory.java:127)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.write(ReflectiveTypeAdapterFactory.java:245)
+	at com.google.gson.Gson.toJson(Gson.java:704)
+	... 17 more
+
+Oct 22, 2021 12:26:47 AM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Oct 22, 2021 12:26:57 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: scala.reflect.internal.Symbols$CyclicReference: illegal cyclic reference involving class CacheCoreReq
+java.util.concurrent.CompletionException: scala.reflect.internal.Symbols$CyclicReference: illegal cyclic reference involving class CacheCoreReq
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:314)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:319)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)
+	at java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2073)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:42)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:38)
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:64)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: scala.reflect.internal.Symbols$CyclicReference: illegal cyclic reference involving class CacheCoreReq
+
+Oct 22, 2021 12:26:58 AM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Oct 22, 2021 12:27:25 AM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+Oct 22, 2021 12:27:29 AM scala.meta.internal.pc.CompilerAccess retryWithCleanCompiler
+INFO: compiler crashed due to an error in the Scala compiler, retrying with new compiler instance.
+[0m2021.10.22 00:32:10 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/IOBundles.scala[0m
+Oct 22, 2021 12:32:12 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 5348
