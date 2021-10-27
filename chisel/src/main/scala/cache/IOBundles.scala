@@ -1,40 +1,46 @@
 package cache
 
 import chisel3._
-import const.CacheConfig
+import chisel3.util._
+import chisel3.util.experimental._
+import const._
 
 // from the view of cache
-class CacheCoreReq(cachelineBits: Int = 128, addrWidth: Int = 32) extends Bundle {
-    val ready = Input(Bool())
-    val addr  = Input(UInt(addrWidth.W))
-    val wen   = Input(Bool())
-    val wdata = Input(UInt(cachelineBits.W))
+// class CacheCoreReq extends Bundle with CacheConfig with MemAccessType {
+class CacheCoreReq extends Bundle with MemAccessType {
+    val addr  = UInt(32.W)
+    val wen   = Bool()
+    val wdata = UInt(128.W)
+    val mtype = UInt(MEMTYPE.W)
 }
 
-class CacheCoreResp(cachelineBits: Int = 128, addrWidth: Int = 32) extends Bundle {
-    val valid = Output(Bool())
-    val rdata = Output(UInt(32.W))
+class CacheCoreResp extends Bundle with CacheConfig with MemAccessType {
+    val rdata = UInt(dataWidth.W)
 }
 
-class CacheCoreIO(cachelineBits: Int = 128, addrWidth: Int = 32) extends Bundle {
-    val req  = new CoreCacheReq(cachelineBits, addrWidth)
-    val resp = new CoreCacheResp(cachelineBits, addrWidth)
+class CacheCoreIO extends Bundle with CacheConfig with MemAccessType {
+    val req  = Flipped(Decoupled(new CacheCoreReq)) // input valid, output ready
+    val resp = Decoupled(new CacheCoreResp)         // input ready, output valid
 }
 
 // from the view of cache
-class CacheMemReq(cachelineBits: Int = 128, addrWidth: Int = 32) extends Bundle {
-    val ready = Output(Bool())
-    val addr  = Output(UInt(addrWidth.W))
-    val wen   = Output(Bool())
-    val wdata = Output(UInt(cachelineBits.W))
+class CacheMemReq extends Bundle with CacheConfig with MemAccessType {
+    val addr  = UInt(addrWidth.W)
+    val wen   = Bool()
+    val wdata = UInt(cachelineBits.W)
+    val mtype = UInt(MEMTYPE.W)
 }
 
-class CacheMemResp(cachelineBits: Int = 128, addrWidth: Int = 32) extends Bundle {
-    val valid = Input(Bool())
-    val rdata = Input(UInt(cachelineBits.W))
+class CacheMemResp extends Bundle with CacheConfig with MemAccessType {
+    val rdata = UInt(cachelineBits.W)
 }
 
-class CacheMemIO(cachelineBits: Int = 128, addrWidth: Int = 32) extends Bundle {
-    val req  = new CacheMemReq(cachelineBits, addrWidth)
-    val resp = new CacheMemResp(cachelineBits, addrWidth)
+class CacheMemIO extends Bundle with CacheConfig with MemAccessType {
+    val req  = Decoupled(new CacheMemReq)           // input ready, output valid
+    val resp = Flipped(Decoupled(new CacheMemResp)) // input valid, output ready
+}
+
+class CacheIO extends Bundle with CacheConfig with MemAccessType {
+    val cpu = new CacheCoreIO
+    val bar = new CacheMemIO
 }
