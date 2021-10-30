@@ -3816,3 +3816,25 @@ WARNING: Unmatched cancel notification for request id 16953
 [0m2021.10.27 18:58:55 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/DCache.scala[0m
 [0m2021.10.27 19:03:45 INFO  shutting down Metals[0m
 [0m2021.10.27 19:08:38 INFO  no build target: using presentation compiler with only scala-library: 3.1.0[0m
+[0m2021.10.30 21:49:38 INFO  Started: Metals version 0.10.8 in workspace '/home/ruorong/hardware/CachePrefetching' for client Visual Studio Code 1.61.2.[0m
+[0m2021.10.30 21:49:40 INFO  time: initialize in 1.84s[0m
+[0m2021.10.30 21:49:40 WARN  Build server is not auto-connectable.[0m
+[0m2021.10.30 21:49:40 WARN  no build tool detected in workspace '/home/ruorong/hardware/CachePrefetching'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.10.30 21:49:41 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/DCache.scala[0m
+[0m2021.10.30 21:49:45 INFO  no build target: using presentation compiler with only scala-library: 3.1.0[0m
+[0m2021.10.30 21:49:51 INFO  time: code lens generation in 9.16s[0m
+[0m2021.10.30 23:22:26 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/IOBundles.scala[0m
+Oct 30, 2021 11:35:35 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 95
+Oct 30, 2021 11:45:16 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 192
+Oct 30, 2021 11:46:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 206
+Oct 30, 2021 11:46:44 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 224
+Oct 30, 2021 11:48:34 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 277
+[0m2021.10.31 00:04:41 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/RAM.scala[0m
+Oct 31, 2021 12:04:41 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 379
+[0m2021.10.31 00:16:25 INFO  shutting down Metals[0m
