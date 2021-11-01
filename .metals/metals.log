@@ -4061,3 +4061,5 @@ WARNING: Unmatched cancel notification for request id 3658
 [0m2021.11.01 21:00:56 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/test/Test.scala[0m
 Nov 01, 2021 9:08:55 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTrace
+Nov 01, 2021 9:10:13 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4150

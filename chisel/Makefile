@@ -1,7 +1,11 @@
 DIR  :=	$(CURDIR)
 
 
-default: cache
+default: all
+
+all:
+	$(MAKE) test
+	$(MAKE) cache
 
 test:
 	sbt "runMain test.GenTest"

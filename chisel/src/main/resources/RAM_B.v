@@ -31,7 +31,7 @@ module RAM_B(
                     data[addra[8:0] + 11], 
                     data[addra[8:0] + 10], 
                     data[addra[8:0] + 9], 
-                    data[addra[8:0] + 8]
+                    data[addra[8:0] + 8],
                     data[addra[8:0] + 7],
                     data[addra[8:0] + 6],
                     data[addra[8:0] + 5],
@@ -39,6 +39,6 @@ module RAM_B(
                     data[addra[8:0] + 3], 
                     data[addra[8:0] + 2], 
                     data[addra[8:0] + 1], 
-                    data[addra[8:0]]}
+                    data[addra[8:0]]};
 
 endmodule
