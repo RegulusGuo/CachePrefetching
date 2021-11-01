@@ -6450,17 +6450,12 @@ module DCache(
   input          io_cpu_req_bits_wen,
   input  [127:0] io_cpu_req_bits_wdata,
   input  [1:0]   io_cpu_req_bits_mtype,
-  input          io_cpu_resp_ready,
   output         io_cpu_resp_valid,
   output [31:0]  io_cpu_resp_bits_rdata,
-  input          io_bar_req_ready,
-  output         io_bar_req_valid,
   output [31:0]  io_bar_req_bits_addr,
   output         io_bar_req_bits_wen,
   output [127:0] io_bar_req_bits_wdata,
   output [1:0]   io_bar_req_bits_mtype,
-  output         io_bar_resp_ready,
-  input          io_bar_resp_valid,
   input  [127:0] io_bar_resp_bits_rdata,
   output         io_dbg_hit,
   output         io_dbg_hitWay,
@@ -6535,7 +6530,7 @@ module DCache(
   reg  mpValid; // @[DCache.scala 85:26]
   reg  mpState; // @[DCache.scala 163:26]
   wire  _T_31 = ~mpState; // @[Conditional.scala 37:30]
-  wire  mpWriteCache = mpValid & mpState & io_bar_resp_valid; // @[DCache.scala 165:53]
+  wire  mpWriteCache = mpValid & mpState; // @[DCache.scala 165:29]
   wire  _GEN_57 = mpState & mpWriteCache; // @[Conditional.scala 39:67 DCache.scala 207:29 DCache.scala 195:17]
   wire  _GEN_61 = _T_31 ? 1'h0 : _GEN_57; // @[Conditional.scala 40:58 DCache.scala 195:17]
   wire  mpRespValid = mpValid & _GEN_61; // @[DCache.scala 196:20 DCache.scala 195:17]
@@ -6664,6 +6659,7 @@ module DCache(
   wire  _GEN_54 = hpTag[0] ? _meta_0_io_update_T_2 : 1'h1; // @[DCache.scala 202:33 DCache.scala 158:27 DCache.scala 205:39]
   wire  _GEN_55 = mpState ? _GEN_53 : _meta_1_io_update_T_2; // @[Conditional.scala 39:67 DCache.scala 158:27]
   wire  _GEN_56 = mpState ? _GEN_54 : _meta_0_io_update_T_2; // @[Conditional.scala 39:67 DCache.scala 158:27]
+  wire  _GEN_58 = _T_31 | mpState; // @[Conditional.scala 40:58 DCache.scala 199:25 DCache.scala 163:26]
   wire  _GEN_59 = _T_31 ? _meta_1_io_update_T_2 : _GEN_55; // @[Conditional.scala 40:58 DCache.scala 158:27]
   wire  _GEN_60 = _T_31 ? _meta_0_io_update_T_2 : _GEN_56; // @[Conditional.scala 40:58 DCache.scala 158:27]
   DualPortBRAM data_0 ( // @[DCache.scala 54:48]
@@ -6709,12 +6705,10 @@ module DCache(
   assign io_cpu_req_ready = io_cpu_resp_valid; // @[DCache.scala 173:22]
   assign io_cpu_resp_valid = hpRespValid | mpRespValid; // @[DCache.scala 141:43]
   assign io_cpu_resp_bits_rdata = mpValid ? _GEN_26 : _GEN_30; // @[DCache.scala 146:34]
-  assign io_bar_req_valid = mpValid & (mpValid & ~io_bar_resp_valid); // @[DCache.scala 171:28]
   assign io_bar_req_bits_addr = mpValid ? _io_bar_req_bits_addr_T_1 : io_cpu_req_bits_addr; // @[DCache.scala 167:33]
   assign io_bar_req_bits_wen = mpValid ? _T_31 : io_cpu_req_bits_wen; // @[DCache.scala 170:33]
   assign io_bar_req_bits_wdata = mpValid ? mpDirtyData : io_cpu_req_bits_wdata; // @[DCache.scala 168:33]
   assign io_bar_req_bits_mtype = io_cpu_req_bits_mtype; // @[DCache.scala 169:27]
-  assign io_bar_resp_ready = 1'h1; // @[DCache.scala 107:23]
   assign io_dbg_hit = meta_0_io_hit | meta_1_io_hit; // @[DCache.scala 109:31]
   assign io_dbg_hitWay = _hpRespValid_T & meta_1_io_hit; // @[DCache.scala 114:33]
   assign io_dbg_replaceWay = hpTag[0]; // @[DCache.scala 115:31]
@@ -6753,9 +6747,7 @@ module DCache(
     if (reset) begin // @[DCache.scala 163:26]
       mpState <= 1'h0; // @[DCache.scala 163:26]
     end else if (mpValid) begin // @[DCache.scala 196:20]
-      if (_T_31) begin // @[Conditional.scala 40:58]
-        mpState <= io_bar_resp_valid | mpState; // @[DCache.scala 199:25]
-      end
+      mpState <= _GEN_58;
     end
     if (_hpReq_T) begin // @[Reg.scala 16:19]
       hpReq_addr <= io_cpu_req_bits_addr; // @[Reg.scala 16:23]
@@ -6948,4 +6940,92 @@ end // initial
 `FIRRTL_AFTER_INITIAL
 `endif
 `endif // SYNTHESIS
+endmodule
+module Test(
+  input          clock,
+  input          reset,
+  output         io_dbg_hit,
+  output         io_dbg_hitWay,
+  output         io_dbg_replaceWay,
+  output         io_cpu_req_ready,
+  input          io_cpu_req_valid,
+  input  [31:0]  io_cpu_req_bits_addr,
+  input          io_cpu_req_bits_wen,
+  input  [127:0] io_cpu_req_bits_wdata,
+  input  [1:0]   io_cpu_req_bits_mtype,
+  input          io_cpu_resp_ready,
+  output         io_cpu_resp_valid,
+  output [31:0]  io_cpu_resp_bits_rdata
+);
+  wire  dcache_clock; // @[Test.scala 36:24]
+  wire  dcache_reset; // @[Test.scala 36:24]
+  wire  dcache_io_cpu_req_ready; // @[Test.scala 36:24]
+  wire  dcache_io_cpu_req_valid; // @[Test.scala 36:24]
+  wire [31:0] dcache_io_cpu_req_bits_addr; // @[Test.scala 36:24]
+  wire  dcache_io_cpu_req_bits_wen; // @[Test.scala 36:24]
+  wire [127:0] dcache_io_cpu_req_bits_wdata; // @[Test.scala 36:24]
+  wire [1:0] dcache_io_cpu_req_bits_mtype; // @[Test.scala 36:24]
+  wire  dcache_io_cpu_resp_valid; // @[Test.scala 36:24]
+  wire [31:0] dcache_io_cpu_resp_bits_rdata; // @[Test.scala 36:24]
+  wire [31:0] dcache_io_bar_req_bits_addr; // @[Test.scala 36:24]
+  wire  dcache_io_bar_req_bits_wen; // @[Test.scala 36:24]
+  wire [127:0] dcache_io_bar_req_bits_wdata; // @[Test.scala 36:24]
+  wire [1:0] dcache_io_bar_req_bits_mtype; // @[Test.scala 36:24]
+  wire [127:0] dcache_io_bar_resp_bits_rdata; // @[Test.scala 36:24]
+  wire  dcache_io_dbg_hit; // @[Test.scala 36:24]
+  wire  dcache_io_dbg_hitWay; // @[Test.scala 36:24]
+  wire  dcache_io_dbg_replaceWay; // @[Test.scala 36:24]
+  wire  dmem_clka; // @[Test.scala 37:24]
+  wire [31:0] dmem_addra; // @[Test.scala 37:24]
+  wire [31:0] dmem_dina; // @[Test.scala 37:24]
+  wire  dmem_wea; // @[Test.scala 37:24]
+  wire [31:0] dmem_douta; // @[Test.scala 37:24]
+  wire [1:0] dmem_mtype; // @[Test.scala 37:24]
+  DCache dcache ( // @[Test.scala 36:24]
+    .clock(dcache_clock),
+    .reset(dcache_reset),
+    .io_cpu_req_ready(dcache_io_cpu_req_ready),
+    .io_cpu_req_valid(dcache_io_cpu_req_valid),
+    .io_cpu_req_bits_addr(dcache_io_cpu_req_bits_addr),
+    .io_cpu_req_bits_wen(dcache_io_cpu_req_bits_wen),
+    .io_cpu_req_bits_wdata(dcache_io_cpu_req_bits_wdata),
+    .io_cpu_req_bits_mtype(dcache_io_cpu_req_bits_mtype),
+    .io_cpu_resp_valid(dcache_io_cpu_resp_valid),
+    .io_cpu_resp_bits_rdata(dcache_io_cpu_resp_bits_rdata),
+    .io_bar_req_bits_addr(dcache_io_bar_req_bits_addr),
+    .io_bar_req_bits_wen(dcache_io_bar_req_bits_wen),
+    .io_bar_req_bits_wdata(dcache_io_bar_req_bits_wdata),
+    .io_bar_req_bits_mtype(dcache_io_bar_req_bits_mtype),
+    .io_bar_resp_bits_rdata(dcache_io_bar_resp_bits_rdata),
+    .io_dbg_hit(dcache_io_dbg_hit),
+    .io_dbg_hitWay(dcache_io_dbg_hitWay),
+    .io_dbg_replaceWay(dcache_io_dbg_replaceWay)
+  );
+  RAM_B dmem ( // @[Test.scala 37:24]
+    .clka(dmem_clka),
+    .addra(dmem_addra),
+    .dina(dmem_dina),
+    .wea(dmem_wea),
+    .douta(dmem_douta),
+    .mtype(dmem_mtype)
+  );
+  assign io_dbg_hit = dcache_io_dbg_hit; // @[Test.scala 49:19]
+  assign io_dbg_hitWay = dcache_io_dbg_hitWay; // @[Test.scala 49:19]
+  assign io_dbg_replaceWay = dcache_io_dbg_replaceWay; // @[Test.scala 49:19]
+  assign io_cpu_req_ready = dcache_io_cpu_req_ready; // @[Test.scala 48:19]
+  assign io_cpu_resp_valid = dcache_io_cpu_resp_valid; // @[Test.scala 48:19]
+  assign io_cpu_resp_bits_rdata = dcache_io_cpu_resp_bits_rdata; // @[Test.scala 48:19]
+  assign dcache_clock = clock;
+  assign dcache_reset = reset;
+  assign dcache_io_cpu_req_valid = io_cpu_req_valid; // @[Test.scala 48:19]
+  assign dcache_io_cpu_req_bits_addr = io_cpu_req_bits_addr; // @[Test.scala 48:19]
+  assign dcache_io_cpu_req_bits_wen = io_cpu_req_bits_wen; // @[Test.scala 48:19]
+  assign dcache_io_cpu_req_bits_wdata = io_cpu_req_bits_wdata; // @[Test.scala 48:19]
+  assign dcache_io_cpu_req_bits_mtype = io_cpu_req_bits_mtype; // @[Test.scala 48:19]
+  assign dcache_io_bar_resp_bits_rdata = {{96'd0}, dmem_douta}; // @[Test.scala 43:35]
+  assign dmem_clka = clock; // @[Test.scala 38:19]
+  assign dmem_addra = dcache_io_bar_req_bits_addr; // @[Test.scala 41:19]
+  assign dmem_dina = dcache_io_bar_req_bits_wdata[31:0]; // @[Test.scala 42:19]
+  assign dmem_wea = dcache_io_bar_req_bits_wen; // @[Test.scala 40:19]
+  assign dmem_mtype = dcache_io_bar_req_bits_mtype; // @[Test.scala 39:19]
 endmodule

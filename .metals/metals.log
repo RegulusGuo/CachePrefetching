@@ -3838,3 +3838,226 @@ WARNING: Unmatched cancel notification for request id 277
 Oct 31, 2021 12:04:41 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
 WARNING: Unmatched cancel notification for request id 379
 [0m2021.10.31 00:16:25 INFO  shutting down Metals[0m
+[0m2021.10.31 00:44:46 INFO  Started: Metals version 0.10.8 in workspace '/home/ruorong/hardware/CachePrefetching' for client Visual Studio Code 1.61.2.[0m
+[0m2021.10.31 00:44:48 INFO  time: initialize in 1.74s[0m
+[0m2021.10.31 00:44:49 WARN  Build server is not auto-connectable.[0m
+[0m2021.10.31 00:44:49 WARN  no build tool detected in workspace '/home/ruorong/hardware/CachePrefetching'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.10.31 00:44:49 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/DCache.scala[0m
+[0m2021.10.31 00:44:52 INFO  no build target: using presentation compiler with only scala-library: 3.1.0[0m
+[0m2021.10.31 00:44:56 INFO  time: code lens generation in 5.4s[0m
+[0m2021.10.31 20:53:34 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/verify/Verify.scala[0m
+Oct 31, 2021 8:53:53 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 123
+[0m2021.10.31 20:54:18 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/verify/Verify.scala[0m
+[0m2021.10.31 20:55:12 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/const/CacheConfig.scala[0m
+Oct 31, 2021 8:55:15 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 287
+Oct 31, 2021 8:56:44 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 570
+[0m2021.10.31 20:56:51 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/verify/Verify.scala[0m
+Oct 31, 2021 9:06:05 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 888
+Oct 31, 2021 9:06:15 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 909
+[0m2021.10.31 21:07:31 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/verify/Verify.scala[0m
+Oct 31, 2021 9:17:40 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1039
+[0m2021.10.31 21:22:40 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/IOBundles.scala[0m
+Oct 31, 2021 9:24:12 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1106
+Oct 31, 2021 9:24:15 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1112
+Oct 31, 2021 9:29:14 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1129
+[0m2021.10.31 21:29:33 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/IOBundles.scala[0m
+[0m2021.10.31 21:29:41 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/verify/Verify.scala[0m
+[0m2021.10.31 21:29:48 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/RAM.scala[0m
+[0m2021.10.31 21:30:55 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/verify/Verify.scala[0m
+Oct 31, 2021 10:53:03 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1380
+Oct 31, 2021 10:54:43 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1426
+Oct 31, 2021 10:55:06 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1462
+[0m2021.10.31 23:16:57 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/verify/Verify.scala[0m
+Oct 31, 2021 11:17:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2327
+[0m2021.10.31 23:18:03 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/verify/Verify.scala[0m
+Oct 31, 2021 11:18:30 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2417
+[0m2021.10.31 23:18:38 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/DCache.scala[0m
+[0m2021.10.31 23:21:25 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/verify/Verify.scala[0m
+[0m2021.10.31 23:22:19 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/verify/Verify.scala[0m
+[0m2021.10.31 23:23:25 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/verify/Verify.scala[0m
+[0m2021.10.31 23:23:44 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/RAM.scala[0m
+Oct 31, 2021 11:23:56 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2538
+[0m2021.10.31 23:24:23 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/verify/Verify.scala[0m
+Oct 31, 2021 11:25:05 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2653
+Oct 31, 2021 11:25:26 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2674
+[0m2021.10.31 23:25:33 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/verify/Verify.scala[0m
+[0m2021.10.31 23:26:10 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/verify/Verify.scala[0m
+Oct 31, 2021 11:27:10 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2735
+Oct 31, 2021 11:28:29 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2762
+Oct 31, 2021 11:28:31 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2768
+Oct 31, 2021 11:30:37 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2902
+Oct 31, 2021 11:30:45 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2916
+Oct 31, 2021 11:30:49 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2926
+[0m2021.10.31 23:31:08 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/DCache.scala[0m
+[0m2021.10.31 23:36:52 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/test/Verify.scala[0m
+[0m2021.10.31 23:37:01 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/test/Test.scala[0m
+[0m2021.10.31 23:37:45 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/test/Test.scala[0m
+Oct 31, 2021 11:43:55 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3099
+Oct 31, 2021 11:44:03 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3106
+Oct 31, 2021 11:44:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3116
+Oct 31, 2021 11:44:20 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3122
+Oct 31, 2021 11:44:22 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3128
+Oct 31, 2021 11:44:26 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3137
+[0m2021.11.01 00:33:15 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/RAM.scala[0m
+Nov 01, 2021 12:33:28 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3279
+Nov 01, 2021 12:42:07 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3312
+[0m2021.11.01 00:47:39 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/test/Test.scala[0m
+[0m2021.11.01 09:26:44 INFO  shutting down Metals[0m
+[0m2021.11.01 09:28:50 INFO  Started: Metals version 0.10.8 in workspace '/home/ruorong/hardware/CachePrefetching' for client Visual Studio Code 1.61.2.[0m
+[0m2021.11.01 09:28:52 INFO  time: initialize in 1.95s[0m
+[0m2021.11.01 09:28:53 WARN  Build server is not auto-connectable.[0m
+[0m2021.11.01 09:28:53 WARN  no build tool detected in workspace '/home/ruorong/hardware/CachePrefetching'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.11.01 09:28:53 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/test/Test.scala[0m
+[0m2021.11.01 09:28:56 INFO  no build target: using presentation compiler with only scala-library: 3.1.0[0m
+[0m2021.11.01 09:29:01 INFO  time: code lens generation in 6.85s[0m
+[0m2021.11.01 10:00:38 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/DCache.scala[0m
+Nov 01, 2021 10:00:39 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 24
+[0m2021.11.01 10:03:07 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/DCache.scala[0m
+[0m2021.11.01 10:52:39 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/const/CacheConfig.scala[0m
+[0m2021.11.01 11:00:29 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/RAM.scala[0m
+Nov 01, 2021 11:00:29 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 352
+[0m2021.11.01 11:01:53 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/test/Test.scala[0m
+Nov 01, 2021 11:22:57 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 388
+[0m2021.11.01 11:23:17 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/IOBundles.scala[0m
+Nov 01, 2021 11:23:28 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 410
+Nov 01, 2021 11:23:45 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 457
+Nov 01, 2021 11:40:10 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 578
+Nov 01, 2021 11:40:10 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 579
+Nov 01, 2021 11:40:48 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 639
+Nov 01, 2021 11:44:04 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 767
+[0m2021.11.01 18:20:17 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/const/CacheConfig.scala[0m
+Nov 01, 2021 6:20:32 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 942
+Nov 01, 2021 6:33:08 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 967
+Nov 01, 2021 6:35:49 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 998
+Nov 01, 2021 6:56:58 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1109
+Nov 01, 2021 6:57:50 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1246
+Nov 01, 2021 6:59:13 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1379
+Nov 01, 2021 7:00:25 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1522
+Nov 01, 2021 7:01:38 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1722
+Nov 01, 2021 7:01:46 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1732
+Nov 01, 2021 7:17:43 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1763
+Nov 01, 2021 7:45:11 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1788
+Nov 01, 2021 7:50:58 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1816
+Nov 01, 2021 8:07:06 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1894
+Nov 01, 2021 8:07:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1928
+Nov 01, 2021 8:12:33 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2108
+[0m2021.11.01 20:16:56 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/test/Test.scala[0m
+Nov 01, 2021 8:16:58 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2307
+[0m2021.11.01 20:17:01 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/DCache.scala[0m
+Nov 01, 2021 8:18:44 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2356
+Nov 01, 2021 8:18:47 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2362
+Nov 01, 2021 8:19:29 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2384
+Nov 01, 2021 8:19:47 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2412
+Nov 01, 2021 8:21:48 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2439
+Nov 01, 2021 8:24:13 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2577
+Nov 01, 2021 8:26:14 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2828
+Nov 01, 2021 8:26:35 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2885
+Nov 01, 2021 8:40:45 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2978
+[0m2021.11.01 20:42:07 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/test/Test.scala[0m
+Nov 01, 2021 8:42:09 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3158
+[0m2021.11.01 20:42:10 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/DCache.scala[0m
+[0m2021.11.01 20:43:05 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/test/Test.scala[0m
+[0m2021.11.01 20:43:40 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/test/Test.scala[0m
+Nov 01, 2021 8:44:39 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3224
+Nov 01, 2021 8:44:40 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3230
+[0m2021.11.01 20:47:06 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/DCache.scala[0m
+[0m2021.11.01 20:47:51 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/DCache.scala[0m
+[0m2021.11.01 20:50:54 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/test/Test.scala[0m
+Nov 01, 2021 8:52:14 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3434
+Nov 01, 2021 8:52:25 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3451
+Nov 01, 2021 8:52:52 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3479
+Nov 01, 2021 8:55:48 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3508
+Nov 01, 2021 8:55:48 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3509
+Nov 01, 2021 8:56:29 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3528
+Nov 01, 2021 8:56:29 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3533
+Nov 01, 2021 8:56:32 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3543
+Nov 01, 2021 8:56:35 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3549
+Nov 01, 2021 8:57:48 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3634
+Nov 01, 2021 8:57:52 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3645
+Nov 01, 2021 8:57:59 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 3658
+[0m2021.11.01 20:58:18 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/IOBundles.scala[0m
+[0m2021.11.01 20:59:37 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/DCache.scala[0m
+[0m2021.11.01 21:00:17 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/test/Test.scala[0m
+[0m2021.11.01 21:00:56 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/test/Test.scala[0m
+Nov 01, 2021 9:08:55 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
