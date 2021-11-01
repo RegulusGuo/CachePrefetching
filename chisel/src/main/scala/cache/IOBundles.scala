@@ -6,7 +6,6 @@ import chisel3.util.experimental._
 import const._
 
 // from the view of cache
-// class CacheCoreReq extends Bundle with CacheConfig with MemAccessType {
 class CacheCoreReq extends Bundle with MemAccessType {
     val addr  = UInt(32.W)
     val wen   = Bool()
@@ -40,7 +39,14 @@ class CacheMemIO extends Bundle with CacheConfig with MemAccessType {
     val resp = Flipped(Decoupled(new CacheMemResp)) // input valid, output ready
 }
 
+class DebugIO extends Bundle with CacheConfig with MemAccessType {
+    val hit        = Output(Bool())
+    val hitWay     = Output(UInt(1.W))
+    val replaceWay = Output(UInt(1.W))
+}
+
 class CacheIO extends Bundle with CacheConfig with MemAccessType {
     val cpu = new CacheCoreIO
     val bar = new CacheMemIO
+    val dbg = new DebugIO
 }

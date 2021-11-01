@@ -109,6 +109,10 @@ class DCache extends Module with CacheConfig with MemAccessType {
     hasHit  := meta(0).io.hit || meta(1).io.hit // TODO: not general, just temporary
     hpStall := mpStall
     hpValid := Mux((hpValid && !hasHit) || mpStall, false.B, io.cpu.req.valid)
+    // val hitWay = Mux(hasHit && meta(1).io.hit, 1.U, 0.U)
+    io.dbg.hit    := hasHit
+    io.dbg.hitWay := Mux(hasHit && meta(1).io.hit, 1.U, 0.U)
+    io.dbg.replaceWay := hpTag(0)
 
     for (i <- 0 until nway) {
         hpFetchLine(i) := Mux(RegNext(data(i).io.web && data(i).io.addra === data(i).io.addrb),
