@@ -4063,3 +4063,15 @@ Nov 01, 2021 9:08:55 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notif
 INFO: Unsupported notification method: $/setTrace
 Nov 01, 2021 9:10:13 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
 WARNING: Unmatched cancel notification for request id 4150
+Nov 01, 2021 11:21:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4180
+Nov 01, 2021 11:21:42 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4193
+Nov 01, 2021 11:27:11 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4222
+[0m2021.11.01 23:27:25 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/IOBundles.scala[0m
+[0m2021.11.01 23:29:16 WARN  no build target for: /home/ruorong/hardware/CachePrefetching/chisel/src/main/scala/cache/IOBundles.scala[0m
+Nov 02, 2021 9:15:23 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4455
+Nov 02, 2021 9:20:15 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 4481

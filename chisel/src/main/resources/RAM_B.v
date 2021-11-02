@@ -14,7 +14,6 @@ module RAM_B(
         $readmemh("ram.hex", data);
     end
 
-    integer i;
     always @(posedge clka) begin
         if (wea & ~|addra[30:9]) begin
             data[addra[8:0] + 15] <= dina[127 : 120];

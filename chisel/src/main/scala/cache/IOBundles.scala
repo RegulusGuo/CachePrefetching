@@ -6,10 +6,10 @@ import chisel3.util.experimental._
 import const._
 
 // from the view of cache
-class CacheCoreReq extends Bundle with MemAccessType {
-    val addr  = UInt(32.W)
+class CacheCoreReq extends Bundle with CacheConfig with MemAccessType {
+    val addr  = UInt(addrWidth.W)
     val wen   = Bool()
-    val wdata = UInt(128.W)
+    val wdata = UInt(dataWidth.W)
     val mtype = UInt(MEMTYPE.W)
 }
 

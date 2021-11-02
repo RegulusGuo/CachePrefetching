@@ -6448,7 +6448,7 @@ module DCache(
   input          io_cpu_req_valid,
   input  [31:0]  io_cpu_req_bits_addr,
   input          io_cpu_req_bits_wen,
-  input  [127:0] io_cpu_req_bits_wdata,
+  input  [31:0]  io_cpu_req_bits_wdata,
   input  [1:0]   io_cpu_req_bits_mtype,
   input          io_cpu_resp_ready,
   output         io_cpu_resp_valid,
@@ -6471,14 +6471,14 @@ module DCache(
   reg [31:0] _RAND_1;
   reg [31:0] _RAND_2;
   reg [31:0] _RAND_3;
-  reg [127:0] _RAND_4;
+  reg [31:0] _RAND_4;
   reg [31:0] _RAND_5;
   reg [31:0] _RAND_6;
   reg [31:0] _RAND_7;
   reg [31:0] _RAND_8;
   reg [31:0] _RAND_9;
   reg [31:0] _RAND_10;
-  reg [127:0] _RAND_11;
+  reg [31:0] _RAND_11;
   reg [31:0] _RAND_12;
   reg [127:0] _RAND_13;
   reg [31:0] _RAND_14;
@@ -6543,7 +6543,7 @@ module DCache(
   wire  _hpReq_T = ~mpStall; // @[DCache.scala 75:50]
   reg [31:0] hpReq_addr; // @[Reg.scala 15:16]
   reg  hpReq_wen; // @[Reg.scala 15:16]
-  reg [127:0] hpReq_wdata; // @[Reg.scala 15:16]
+  reg [31:0] hpReq_wdata; // @[Reg.scala 15:16]
   reg [1:0] hpReq_mtype; // @[Reg.scala 15:16]
   reg [7:0] hpIndex; // @[Reg.scala 15:16]
   reg [19:0] hpTag; // @[Reg.scala 15:16]
@@ -6552,7 +6552,7 @@ module DCache(
   wire  _hpRespValid_T = meta_0_io_hit | meta_1_io_hit; // @[DCache.scala 80:50]
   wire  hpRespValid = hpValid & (meta_0_io_hit | meta_1_io_hit); // @[DCache.scala 80:31]
   reg  mpReq_wen; // @[DCache.scala 83:26]
-  reg [127:0] mpReq_wdata; // @[DCache.scala 83:26]
+  reg [31:0] mpReq_wdata; // @[DCache.scala 83:26]
   reg [31:0] mpDirtyAddr; // @[DCache.scala 91:27]
   reg [127:0] mpDirtyData; // @[DCache.scala 92:27]
   reg [3:0] mpOffset; // @[DCache.scala 93:27]
@@ -6587,20 +6587,18 @@ module DCache(
   wire [31:0] _hpMask_T_1 = 2'h0 == hpReq_mtype ? 32'hff : 32'hffffffff; // @[Mux.scala 80:57]
   wire [31:0] hpMask = 2'h1 == hpReq_mtype ? 32'hffff : _hpMask_T_1; // @[Mux.scala 80:57]
   wire [4:0] hpShift = {hpReq_addr[1:0], 3'h0}; // @[DCache.scala 129:50]
-  wire [127:0] _GEN_66 = {{96'd0}, hpMask}; // @[DCache.scala 135:36]
-  wire [127:0] _hpWriteWord_0_T = _GEN_66 & hpReq_wdata; // @[DCache.scala 135:36]
-  wire [158:0] _GEN_67 = {{31'd0}, _hpWriteWord_0_T}; // @[DCache.scala 135:51]
-  wire [158:0] _hpWriteWord_0_T_1 = _GEN_67 << hpShift; // @[DCache.scala 135:51]
-  wire [62:0] _GEN_68 = {{31'd0}, hpMask}; // @[DCache.scala 135:85]
-  wire [62:0] _hpWriteWord_0_T_2 = _GEN_68 << hpShift; // @[DCache.scala 135:85]
+  wire [31:0] _hpWriteWord_0_T = hpMask & hpReq_wdata; // @[DCache.scala 135:36]
+  wire [62:0] _GEN_66 = {{31'd0}, _hpWriteWord_0_T}; // @[DCache.scala 135:51]
+  wire [62:0] _hpWriteWord_0_T_1 = _GEN_66 << hpShift; // @[DCache.scala 135:51]
+  wire [62:0] _GEN_67 = {{31'd0}, hpMask}; // @[DCache.scala 135:85]
+  wire [62:0] _hpWriteWord_0_T_2 = _GEN_67 << hpShift; // @[DCache.scala 135:85]
   wire [62:0] _hpWriteWord_0_T_3 = ~_hpWriteWord_0_T_2; // @[DCache.scala 135:76]
   wire [31:0] _GEN_8 = 2'h1 == hpOffset ? hpFetchLine_0_1 : hpFetchLine_0_0; // @[DCache.scala 135:107 DCache.scala 135:107]
   wire [31:0] _GEN_9 = 2'h2 == hpOffset ? hpFetchLine_0_2 : _GEN_8; // @[DCache.scala 135:107 DCache.scala 135:107]
   wire [31:0] _GEN_10 = 2'h3 == hpOffset ? hpFetchLine_0_3 : _GEN_9; // @[DCache.scala 135:107 DCache.scala 135:107]
-  wire [62:0] _GEN_69 = {{31'd0}, _GEN_10}; // @[DCache.scala 135:107]
-  wire [62:0] _hpWriteWord_0_T_4 = _hpWriteWord_0_T_3 & _GEN_69; // @[DCache.scala 135:107]
-  wire [158:0] _GEN_70 = {{96'd0}, _hpWriteWord_0_T_4}; // @[DCache.scala 135:72]
-  wire [158:0] _hpWriteWord_0_T_5 = _hpWriteWord_0_T_1 | _GEN_70; // @[DCache.scala 135:72]
+  wire [62:0] _GEN_68 = {{31'd0}, _GEN_10}; // @[DCache.scala 135:107]
+  wire [62:0] _hpWriteWord_0_T_4 = _hpWriteWord_0_T_3 & _GEN_68; // @[DCache.scala 135:107]
+  wire [62:0] _hpWriteWord_0_T_5 = _hpWriteWord_0_T_1 | _hpWriteWord_0_T_4; // @[DCache.scala 135:72]
   wire [31:0] hpWriteWord_0 = _hpWriteWord_0_T_5[31:0]; // @[DCache.scala 130:27 DCache.scala 135:24]
   wire [31:0] hpWriteLine_0_0 = 2'h0 == hpOffset ? hpWriteWord_0 : hpFetchLine_0_0; // @[DCache.scala 138:34 DCache.scala 138:34 DCache.scala 137:24]
   wire [31:0] hpWriteLine_0_1 = 2'h1 == hpOffset ? hpWriteWord_0 : hpFetchLine_0_1; // @[DCache.scala 138:34 DCache.scala 138:34 DCache.scala 137:24]
@@ -6609,10 +6607,9 @@ module DCache(
   wire [31:0] _GEN_16 = 2'h1 == hpOffset ? hpFetchLine_1_1 : hpFetchLine_1_0; // @[DCache.scala 135:107 DCache.scala 135:107]
   wire [31:0] _GEN_17 = 2'h2 == hpOffset ? hpFetchLine_1_2 : _GEN_16; // @[DCache.scala 135:107 DCache.scala 135:107]
   wire [31:0] _GEN_18 = 2'h3 == hpOffset ? hpFetchLine_1_3 : _GEN_17; // @[DCache.scala 135:107 DCache.scala 135:107]
-  wire [62:0] _GEN_74 = {{31'd0}, _GEN_18}; // @[DCache.scala 135:107]
-  wire [62:0] _hpWriteWord_1_T_4 = _hpWriteWord_0_T_3 & _GEN_74; // @[DCache.scala 135:107]
-  wire [158:0] _GEN_75 = {{96'd0}, _hpWriteWord_1_T_4}; // @[DCache.scala 135:72]
-  wire [158:0] _hpWriteWord_1_T_5 = _hpWriteWord_0_T_1 | _GEN_75; // @[DCache.scala 135:72]
+  wire [62:0] _GEN_71 = {{31'd0}, _GEN_18}; // @[DCache.scala 135:107]
+  wire [62:0] _hpWriteWord_1_T_4 = _hpWriteWord_0_T_3 & _GEN_71; // @[DCache.scala 135:107]
+  wire [62:0] _hpWriteWord_1_T_5 = _hpWriteWord_0_T_1 | _hpWriteWord_1_T_4; // @[DCache.scala 135:72]
   wire [31:0] hpWriteWord_1 = _hpWriteWord_1_T_5[31:0]; // @[DCache.scala 130:27 DCache.scala 135:24]
   wire [31:0] hpWriteLine_1_0 = 2'h0 == hpOffset ? hpWriteWord_1 : hpFetchLine_1_0; // @[DCache.scala 138:34 DCache.scala 138:34 DCache.scala 137:24]
   wire [31:0] hpWriteLine_1_1 = 2'h1 == hpOffset ? hpWriteWord_1 : hpFetchLine_1_1; // @[DCache.scala 138:34 DCache.scala 138:34 DCache.scala 137:24]
@@ -6633,17 +6630,15 @@ module DCache(
   wire [31:0] _GEN_29 = 2'h2 == hpOffset ? rdata_2 : _GEN_28; // @[DCache.scala 146:34 DCache.scala 146:34]
   wire [31:0] _GEN_30 = 2'h3 == hpOffset ? rdata_3 : _GEN_29; // @[DCache.scala 146:34 DCache.scala 146:34]
   wire  _data_0_io_web_T_4 = hpValid & meta_0_io_hit & hpReq_wen; // @[DCache.scala 149:107]
-  wire [127:0] _GEN_76 = {{96'd0}, mpMask}; // @[DCache.scala 192:32]
-  wire [127:0] _mpWriteWord_T = _GEN_76 & mpReq_wdata; // @[DCache.scala 192:32]
-  wire [158:0] _GEN_77 = {{31'd0}, _mpWriteWord_T}; // @[DCache.scala 192:47]
-  wire [158:0] _mpWriteWord_T_1 = _GEN_77 << mpShift; // @[DCache.scala 192:47]
-  wire [62:0] _GEN_78 = {{31'd0}, mpMask}; // @[DCache.scala 192:81]
-  wire [62:0] _mpWriteWord_T_2 = _GEN_78 << mpShift; // @[DCache.scala 192:81]
+  wire [31:0] _mpWriteWord_T = mpMask & mpReq_wdata; // @[DCache.scala 192:32]
+  wire [62:0] _GEN_72 = {{31'd0}, _mpWriteWord_T}; // @[DCache.scala 192:47]
+  wire [62:0] _mpWriteWord_T_1 = _GEN_72 << mpShift; // @[DCache.scala 192:47]
+  wire [62:0] _GEN_73 = {{31'd0}, mpMask}; // @[DCache.scala 192:81]
+  wire [62:0] _mpWriteWord_T_2 = _GEN_73 << mpShift; // @[DCache.scala 192:81]
   wire [62:0] _mpWriteWord_T_3 = ~_mpWriteWord_T_2; // @[DCache.scala 192:72]
-  wire [62:0] _GEN_79 = {{31'd0}, _GEN_26}; // @[DCache.scala 192:103]
-  wire [62:0] _mpWriteWord_T_5 = _mpWriteWord_T_3 & _GEN_79; // @[DCache.scala 192:103]
-  wire [158:0] _GEN_80 = {{96'd0}, _mpWriteWord_T_5}; // @[DCache.scala 192:68]
-  wire [158:0] mpWriteWord = _mpWriteWord_T_1 | _GEN_80; // @[DCache.scala 192:68]
+  wire [62:0] _GEN_74 = {{31'd0}, _GEN_26}; // @[DCache.scala 192:103]
+  wire [62:0] _mpWriteWord_T_5 = _mpWriteWord_T_3 & _GEN_74; // @[DCache.scala 192:103]
+  wire [62:0] mpWriteWord = _mpWriteWord_T_1 | _mpWriteWord_T_5; // @[DCache.scala 192:68]
   wire [31:0] mpWriteLine_1 = 2'h1 == mpOffset[1:0] ? mpWriteWord[31:0] : mpRefillLine_1; // @[DCache.scala 194:27 DCache.scala 194:27 DCache.scala 193:17]
   wire [31:0] mpWriteLine_0 = 2'h0 == mpOffset[1:0] ? mpWriteWord[31:0] : mpRefillLine_0; // @[DCache.scala 194:27 DCache.scala 194:27 DCache.scala 193:17]
   wire [31:0] mpWriteLine_3 = 2'h3 == mpOffset[1:0] ? mpWriteWord[31:0] : mpRefillLine_3; // @[DCache.scala 194:27 DCache.scala 194:27 DCache.scala 193:17]
@@ -6712,7 +6707,7 @@ module DCache(
   assign io_bar_req_valid = mpValid & (mpValid & ~io_bar_resp_valid); // @[DCache.scala 171:28]
   assign io_bar_req_bits_addr = mpValid ? _io_bar_req_bits_addr_T_1 : io_cpu_req_bits_addr; // @[DCache.scala 167:33]
   assign io_bar_req_bits_wen = mpValid ? _T_31 : io_cpu_req_bits_wen; // @[DCache.scala 170:33]
-  assign io_bar_req_bits_wdata = mpValid ? mpDirtyData : io_cpu_req_bits_wdata; // @[DCache.scala 168:33]
+  assign io_bar_req_bits_wdata = mpValid ? mpDirtyData : {{96'd0}, io_cpu_req_bits_wdata}; // @[DCache.scala 168:33]
   assign io_bar_req_bits_mtype = io_cpu_req_bits_mtype; // @[DCache.scala 169:27]
   assign io_bar_resp_ready = 1'h1; // @[DCache.scala 107:23]
   assign io_dbg_hit = meta_0_io_hit | meta_1_io_hit; // @[DCache.scala 109:31]
@@ -6791,7 +6786,7 @@ module DCache(
       mpReq_wen <= hpReq_wen; // @[DCache.scala 177:21]
     end
     if (reset) begin // @[DCache.scala 83:26]
-      mpReq_wdata <= 128'h0; // @[DCache.scala 83:26]
+      mpReq_wdata <= 32'h0; // @[DCache.scala 83:26]
     end else if (_hpReq_T) begin // @[DCache.scala 175:21]
       mpReq_wdata <= hpReq_wdata; // @[DCache.scala 177:21]
     end
@@ -6891,8 +6886,8 @@ initial begin
   hpReq_addr = _RAND_2[31:0];
   _RAND_3 = {1{`RANDOM}};
   hpReq_wen = _RAND_3[0:0];
-  _RAND_4 = {4{`RANDOM}};
-  hpReq_wdata = _RAND_4[127:0];
+  _RAND_4 = {1{`RANDOM}};
+  hpReq_wdata = _RAND_4[31:0];
   _RAND_5 = {1{`RANDOM}};
   hpReq_mtype = _RAND_5[1:0];
   _RAND_6 = {1{`RANDOM}};
@@ -6905,8 +6900,8 @@ initial begin
   hpValid = _RAND_9[0:0];
   _RAND_10 = {1{`RANDOM}};
   mpReq_wen = _RAND_10[0:0];
-  _RAND_11 = {4{`RANDOM}};
-  mpReq_wdata = _RAND_11[127:0];
+  _RAND_11 = {1{`RANDOM}};
+  mpReq_wdata = _RAND_11[31:0];
   _RAND_12 = {1{`RANDOM}};
   mpDirtyAddr = _RAND_12[31:0];
   _RAND_13 = {4{`RANDOM}};
