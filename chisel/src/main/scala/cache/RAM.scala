@@ -20,19 +20,11 @@ class DualPortBRAMIO(DATA_WIDTH: Int, DEPTH: Int) extends Bundle {
 }
 
 
-class DualPortBRAM(DATA_WIDTH: Int, DEPTH: Int, verilator: Boolean = false, mmio: Boolean = false, lut: Boolean = false) extends Module {
+class DualPortBRAM(DATA_WIDTH: Int, DEPTH: Int) extends Module {
     val io = IO(new DualPortBRAMIO(DATA_WIDTH, DEPTH))
 
-    if (mmio) {
-        io.douta := 0.U
-        io.doutb := 0.U
-    } else if (verilator || lut) {
-        val sim_dual_port_bram = Module(new SimDualPortBRAM(DATA_WIDTH, DEPTH))
-        sim_dual_port_bram.io <> io
-    } else {
-        val xpm_dual_port_bram = Module(new XPMDualPortBRAM(DATA_WIDTH, DEPTH))
-        xpm_dual_port_bram.io <> io
-    }
+    val sim_dual_port_bram = Module(new SimDualPortBRAM(DATA_WIDTH, DEPTH))
+    sim_dual_port_bram.io <> io
 }
 
 class SimDualPortBRAM(DATA_WIDTH: Int, DEPTH: Int) extends Module {

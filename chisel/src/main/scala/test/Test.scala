@@ -13,10 +13,10 @@ import scala.annotation.switch
 
 class DmemIO extends Bundle with CacheConfig with MemAccessType {
     val clka  = Input(Clock())
-    val addra = Input(UInt(32.W))
-    val dina  = Input(UInt(32.W))
+    val addra = Input(UInt(addrWidth.W))
+    val dina  = Input(UInt(cachelineBits.W))
     val wea   = Input(Bool())
-    val douta = Output(UInt(32.W))
+    val douta = Output(UInt(cachelineBits.W))
     val mtype = Input(UInt(MEMTYPE.W))
 }
 

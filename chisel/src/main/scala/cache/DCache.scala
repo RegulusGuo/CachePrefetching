@@ -25,7 +25,7 @@ class MetaIODSimple extends Bundle with CacheConfig {
 class MetaDataBRAM extends Module with CacheConfig {
   // TODO: fix TagBits
   val io = IO(new MetaIODSimple)
-  val blk = Module(new DualPortBRAM(tagBits + 2, nline, verilator = true))  // dirty, valid, tag
+  val blk = Module(new DualPortBRAM(tagBits + 2, nline))  // dirty, valid, tag
   // a read port, b write port
   // forwarding for simultaneously read and write
   val dout = Mux(RegNext(blk.io.web && blk.io.addra === blk.io.addrb), RegNext(blk.io.dinb), blk.io.douta)
@@ -51,7 +51,7 @@ class MetaDataBRAM extends Module with CacheConfig {
 class DCache extends Module with CacheConfig with MemAccessType {
     val io = IO(new CacheIO)
 
-    val data = Seq.tabulate(nway) { i => Module(new DualPortBRAM(DATA_WIDTH = cachelineBits, nline, verilator = true))}
+    val data = Seq.tabulate(nway) { i => Module(new DualPortBRAM(DATA_WIDTH = cachelineBits, nline))}
     val meta = Seq.tabulate(nway) { i => Module(new MetaDataBRAM) }
     
     for (i <- 0 until nway) {
@@ -140,10 +140,11 @@ class DCache extends Module with CacheConfig with MemAccessType {
     
     io.cpu.resp.valid      := hpRespValid || mpRespValid
     val rdata = Wire(Vec(cachelineBits / dataWidth, UInt(dataWidth.W)))
-    for (i <- 0 until nway) {
-        rdata := Mux(meta(i).io.hit, 0.U.asTypeOf(rdata), hpFetchLine(i))
-    }
-    io.cpu.resp.bits.rdata := Mux(mpValid, mpRefillLine(mpOffset), rdata(hpOffset)).asTypeOf(chiselTypeOf(io.cpu.resp.bits.rdata))
+    // for (i <- 0 until nway) {
+    //     rdata := Mux(meta(i).io.hit, 0.U.asTypeOf(rdata), hpFetchLine(i))
+    // }
+    rdata := Mux(hasHit, Mux(meta(0).io.hit, hpFetchLine(0), hpFetchLine(1)), 0.U.asTypeOf(rdata))
+    io.cpu.resp.bits.rdata := Mux(mpValid, mpRefillLine(mpOffset) & mpMask, rdata(hpOffset) & hpMask).asTypeOf(chiselTypeOf(io.cpu.resp.bits.rdata))
  
     for (i <- 0 until nway) {
         data(i).io.web := Mux(mpValid, i.U === mpTag(0).asUInt && mpWriteCache, hpValid && meta(i).io.hit && hpReq.wen)
@@ -167,27 +168,30 @@ class DCache extends Module with CacheConfig with MemAccessType {
     io.bar.req.bits.addr  := Mux(mpValid, Mux(mpState === mpWriteBack, mpDirtyAddr, mpRefillAddr), io.cpu.req.bits.addr)
     io.bar.req.bits.wdata := Mux(mpValid, mpDirtyData, io.cpu.req.bits.wdata)
     io.bar.req.bits.mtype := io.cpu.req.bits.mtype
-    io.bar.req.bits.wen   := Mux(mpValid, mpState === mpWriteBack, io.cpu.req.bits.wen)
+    io.bar.req.bits.wen   := Mux(mpValid, Mux(mpTag(0), meta(1).io.dirty, meta(0).io.dirty) && mpState === mpWriteBack, false.B)
+                                          // io.cpu.req.bits.wen)
     io.bar.req.valid := Mux(mpValid, mpValid && !io.bar.resp.valid, false.B)
     mpRefillLine     := io.bar.resp.bits.rdata.asTypeOf(chiselTypeOf(mpRefillLine))
     io.cpu.req.ready := io.cpu.resp.valid // FIXME
     
     when (!mpStall) {
-        mpValid     := hpValid && !hasHit
-        mpReq       := hpReq
-        mpIndex     := hpIndex
-        mpTag       := hpTag
-        mpOffset    := hpOffset
-        mpMask      := hpMask
-        mpShift     := hpShift
+        mpValid  := hpValid && !hasHit
+        mpReq    := hpReq
+        mpIndex  := hpIndex
+        mpTag    := hpTag
+        mpOffset := hpOffset
+        mpMask   := hpMask
+        mpShift  := hpShift
+
         when (hpTag(0)) {
+            mpState     := Mux(meta(1).io.dirty, mpWriteBack, mpRefill)
             mpDirtyAddr := Cat(meta(1).io.tagFetch, hpIndex, 0.U(offsetBits.W))
             mpDirtyData := hpFetchLine(1).asTypeOf(chiselTypeOf(mpDirtyData))
         }.otherwise {
+            mpState     := Mux(meta(0).io.dirty, mpWriteBack, mpRefill)
             mpDirtyAddr := Cat(meta(0).io.tagFetch, hpIndex, 0.U(offsetBits.W))
             mpDirtyData := hpFetchLine(0).asTypeOf(chiselTypeOf(mpDirtyData))
         }
-        // mpDirtyData := hpFetchLine(hpTag(0))
     }
     val mpWriteWord = ((mpMask & mpReq.wdata) << mpShift).asUInt() | ((~(mpMask << mpShift)).asUInt() & mpRefillLine(mpOffset))
     mpWriteLine := mpRefillLine
