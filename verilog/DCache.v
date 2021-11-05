@@ -6443,6 +6443,288 @@ end // initial
 `endif
 `endif // SYNTHESIS
 endmodule
+module SimDualPortBRAM_4(
+  input          clock,
+  input          reset,
+  input          io_web,
+  input  [127:0] io_dinb,
+  output [127:0] io_douta
+);
+`ifdef RANDOMIZE_REG_INIT
+  reg [127:0] _RAND_0;
+  reg [127:0] _RAND_1;
+`endif // RANDOMIZE_REG_INIT
+  reg [127:0] mem_0; // @[RAM.scala 33:22]
+  reg [127:0] io_douta_REG; // @[RAM.scala 35:24]
+  assign io_douta = io_douta_REG; // @[RAM.scala 35:14]
+  always @(posedge clock) begin
+    if (reset) begin // @[RAM.scala 33:22]
+      mem_0 <= 128'h0; // @[RAM.scala 33:22]
+    end else if (io_web) begin // @[RAM.scala 41:18]
+      mem_0 <= io_dinb; // @[RAM.scala 42:23]
+    end
+    io_douta_REG <= mem_0; // @[RAM.scala 35:24]
+  end
+// Register and memory initialization
+`ifdef RANDOMIZE_GARBAGE_ASSIGN
+`define RANDOMIZE
+`endif
+`ifdef RANDOMIZE_INVALID_ASSIGN
+`define RANDOMIZE
+`endif
+`ifdef RANDOMIZE_REG_INIT
+`define RANDOMIZE
+`endif
+`ifdef RANDOMIZE_MEM_INIT
+`define RANDOMIZE
+`endif
+`ifndef RANDOM
+`define RANDOM $random
+`endif
+`ifdef RANDOMIZE_MEM_INIT
+  integer initvar;
+`endif
+`ifndef SYNTHESIS
+`ifdef FIRRTL_BEFORE_INITIAL
+`FIRRTL_BEFORE_INITIAL
+`endif
+initial begin
+  `ifdef RANDOMIZE
+    `ifdef INIT_RANDOM
+      `INIT_RANDOM
+    `endif
+    `ifndef VERILATOR
+      `ifdef RANDOMIZE_DELAY
+        #`RANDOMIZE_DELAY begin end
+      `else
+        #0.002 begin end
+      `endif
+    `endif
+`ifdef RANDOMIZE_REG_INIT
+  _RAND_0 = {4{`RANDOM}};
+  mem_0 = _RAND_0[127:0];
+  _RAND_1 = {4{`RANDOM}};
+  io_douta_REG = _RAND_1[127:0];
+`endif // RANDOMIZE_REG_INIT
+  `endif // RANDOMIZE
+end // initial
+`ifdef FIRRTL_AFTER_INITIAL
+`FIRRTL_AFTER_INITIAL
+`endif
+`endif // SYNTHESIS
+endmodule
+module DualPortBRAM_4(
+  input          clock,
+  input          reset,
+  input          io_web,
+  input  [127:0] io_dinb,
+  output [127:0] io_douta
+);
+  wire  sim_dual_port_bram_clock; // @[RAM.scala 26:36]
+  wire  sim_dual_port_bram_reset; // @[RAM.scala 26:36]
+  wire  sim_dual_port_bram_io_web; // @[RAM.scala 26:36]
+  wire [127:0] sim_dual_port_bram_io_dinb; // @[RAM.scala 26:36]
+  wire [127:0] sim_dual_port_bram_io_douta; // @[RAM.scala 26:36]
+  SimDualPortBRAM_4 sim_dual_port_bram ( // @[RAM.scala 26:36]
+    .clock(sim_dual_port_bram_clock),
+    .reset(sim_dual_port_bram_reset),
+    .io_web(sim_dual_port_bram_io_web),
+    .io_dinb(sim_dual_port_bram_io_dinb),
+    .io_douta(sim_dual_port_bram_io_douta)
+  );
+  assign io_douta = sim_dual_port_bram_io_douta; // @[RAM.scala 27:27]
+  assign sim_dual_port_bram_clock = clock;
+  assign sim_dual_port_bram_reset = reset;
+  assign sim_dual_port_bram_io_web = io_web; // @[RAM.scala 27:27]
+  assign sim_dual_port_bram_io_dinb = io_dinb; // @[RAM.scala 27:27]
+endmodule
+module SimDualPortBRAM_5(
+  input         clock,
+  input         reset,
+  input         io_web,
+  input  [29:0] io_dinb,
+  output [29:0] io_douta
+);
+`ifdef RANDOMIZE_REG_INIT
+  reg [31:0] _RAND_0;
+  reg [31:0] _RAND_1;
+`endif // RANDOMIZE_REG_INIT
+  reg [29:0] mem_0; // @[RAM.scala 33:22]
+  reg [29:0] io_douta_REG; // @[RAM.scala 35:24]
+  assign io_douta = io_douta_REG; // @[RAM.scala 35:14]
+  always @(posedge clock) begin
+    if (reset) begin // @[RAM.scala 33:22]
+      mem_0 <= 30'h0; // @[RAM.scala 33:22]
+    end else if (io_web) begin // @[RAM.scala 41:18]
+      mem_0 <= io_dinb; // @[RAM.scala 42:23]
+    end
+    io_douta_REG <= mem_0; // @[RAM.scala 35:24]
+  end
+// Register and memory initialization
+`ifdef RANDOMIZE_GARBAGE_ASSIGN
+`define RANDOMIZE
+`endif
+`ifdef RANDOMIZE_INVALID_ASSIGN
+`define RANDOMIZE
+`endif
+`ifdef RANDOMIZE_REG_INIT
+`define RANDOMIZE
+`endif
+`ifdef RANDOMIZE_MEM_INIT
+`define RANDOMIZE
+`endif
+`ifndef RANDOM
+`define RANDOM $random
+`endif
+`ifdef RANDOMIZE_MEM_INIT
+  integer initvar;
+`endif
+`ifndef SYNTHESIS
+`ifdef FIRRTL_BEFORE_INITIAL
+`FIRRTL_BEFORE_INITIAL
+`endif
+initial begin
+  `ifdef RANDOMIZE
+    `ifdef INIT_RANDOM
+      `INIT_RANDOM
+    `endif
+    `ifndef VERILATOR
+      `ifdef RANDOMIZE_DELAY
+        #`RANDOMIZE_DELAY begin end
+      `else
+        #0.002 begin end
+      `endif
+    `endif
+`ifdef RANDOMIZE_REG_INIT
+  _RAND_0 = {1{`RANDOM}};
+  mem_0 = _RAND_0[29:0];
+  _RAND_1 = {1{`RANDOM}};
+  io_douta_REG = _RAND_1[29:0];
+`endif // RANDOMIZE_REG_INIT
+  `endif // RANDOMIZE
+end // initial
+`ifdef FIRRTL_AFTER_INITIAL
+`FIRRTL_AFTER_INITIAL
+`endif
+`endif // SYNTHESIS
+endmodule
+module DualPortBRAM_5(
+  input         clock,
+  input         reset,
+  input         io_web,
+  input  [29:0] io_dinb,
+  output [29:0] io_douta
+);
+  wire  sim_dual_port_bram_clock; // @[RAM.scala 26:36]
+  wire  sim_dual_port_bram_reset; // @[RAM.scala 26:36]
+  wire  sim_dual_port_bram_io_web; // @[RAM.scala 26:36]
+  wire [29:0] sim_dual_port_bram_io_dinb; // @[RAM.scala 26:36]
+  wire [29:0] sim_dual_port_bram_io_douta; // @[RAM.scala 26:36]
+  SimDualPortBRAM_5 sim_dual_port_bram ( // @[RAM.scala 26:36]
+    .clock(sim_dual_port_bram_clock),
+    .reset(sim_dual_port_bram_reset),
+    .io_web(sim_dual_port_bram_io_web),
+    .io_dinb(sim_dual_port_bram_io_dinb),
+    .io_douta(sim_dual_port_bram_io_douta)
+  );
+  assign io_douta = sim_dual_port_bram_io_douta; // @[RAM.scala 27:27]
+  assign sim_dual_port_bram_clock = clock;
+  assign sim_dual_port_bram_reset = reset;
+  assign sim_dual_port_bram_io_web = io_web; // @[RAM.scala 27:27]
+  assign sim_dual_port_bram_io_dinb = io_dinb; // @[RAM.scala 27:27]
+endmodule
+module MetaBufBRAM(
+  input         clock,
+  input         reset,
+  input  [7:0]  io_indexUpdate,
+  input  [19:0] io_tagUpdate,
+  input         io_update,
+  input         io_write,
+  output        io_hit,
+  output        io_dirty
+);
+`ifdef RANDOMIZE_REG_INIT
+  reg [31:0] _RAND_0;
+  reg [31:0] _RAND_1;
+`endif // RANDOMIZE_REG_INIT
+  wire  blk_clock; // @[DCache.scala 54:21]
+  wire  blk_reset; // @[DCache.scala 54:21]
+  wire  blk_io_web; // @[DCache.scala 54:21]
+  wire [29:0] blk_io_dinb; // @[DCache.scala 54:21]
+  wire [29:0] blk_io_douta; // @[DCache.scala 54:21]
+  reg  dout_REG; // @[DCache.scala 57:28]
+  reg [29:0] dout_REG_1; // @[DCache.scala 57:82]
+  wire [29:0] dout = dout_REG ? dout_REG_1 : blk_io_douta; // @[DCache.scala 57:20]
+  wire  v = dout[28]; // @[DCache.scala 58:21]
+  wire [19:0] tag = dout[27:8]; // @[DCache.scala 59:21]
+  wire [7:0] index = dout[7:0]; // @[DCache.scala 60:21]
+  wire [27:0] blk_io_dinb_lo = {io_tagUpdate,io_indexUpdate}; // @[Cat.scala 30:58]
+  wire [1:0] blk_io_dinb_hi = {io_write,1'h1}; // @[Cat.scala 30:58]
+  DualPortBRAM_5 blk ( // @[DCache.scala 54:21]
+    .clock(blk_clock),
+    .reset(blk_reset),
+    .io_web(blk_io_web),
+    .io_dinb(blk_io_dinb),
+    .io_douta(blk_io_douta)
+  );
+  assign io_hit = v & io_tagUpdate == tag & io_indexUpdate == index; // @[DCache.scala 74:47]
+  assign io_dirty = dout[29]; // @[DCache.scala 73:25]
+  assign blk_clock = clock;
+  assign blk_reset = reset;
+  assign blk_io_web = io_update; // @[DCache.scala 69:18]
+  assign blk_io_dinb = {blk_io_dinb_hi,blk_io_dinb_lo}; // @[Cat.scala 30:58]
+  always @(posedge clock) begin
+    dout_REG <= blk_io_web; // @[DCache.scala 57:40]
+    dout_REG_1 <= blk_io_dinb; // @[DCache.scala 57:82]
+  end
+// Register and memory initialization
+`ifdef RANDOMIZE_GARBAGE_ASSIGN
+`define RANDOMIZE
+`endif
+`ifdef RANDOMIZE_INVALID_ASSIGN
+`define RANDOMIZE
+`endif
+`ifdef RANDOMIZE_REG_INIT
+`define RANDOMIZE
+`endif
+`ifdef RANDOMIZE_MEM_INIT
+`define RANDOMIZE
+`endif
+`ifndef RANDOM
+`define RANDOM $random
+`endif
+`ifdef RANDOMIZE_MEM_INIT
+  integer initvar;
+`endif
+`ifndef SYNTHESIS
+`ifdef FIRRTL_BEFORE_INITIAL
+`FIRRTL_BEFORE_INITIAL
+`endif
+initial begin
+  `ifdef RANDOMIZE
+    `ifdef INIT_RANDOM
+      `INIT_RANDOM
+    `endif
+    `ifndef VERILATOR
+      `ifdef RANDOMIZE_DELAY
+        #`RANDOMIZE_DELAY begin end
+      `else
+        #0.002 begin end
+      `endif
+    `endif
+`ifdef RANDOMIZE_REG_INIT
+  _RAND_0 = {1{`RANDOM}};
+  dout_REG = _RAND_0[0:0];
+  _RAND_1 = {1{`RANDOM}};
+  dout_REG_1 = _RAND_1[29:0];
+`endif // RANDOMIZE_REG_INIT
+  `endif // RANDOMIZE
+end // initial
+`ifdef FIRRTL_AFTER_INITIAL
+`FIRRTL_AFTER_INITIAL
+`endif
+`endif // SYNTHESIS
+endmodule
 module DCache(
   input          clock,
   input          reset,
@@ -6461,10 +6743,15 @@ module DCache(
   output         io_bar_req_bits_wen,
   output [127:0] io_bar_req_bits_wdata,
   output [1:0]   io_bar_req_bits_mtype,
+  output         io_bar_req_bits_wenBuf,
+  output [31:0]  io_bar_req_bits_addrBuf,
+  output [127:0] io_bar_req_bits_wdataBuf,
   output         io_bar_resp_ready,
   input          io_bar_resp_valid,
   input  [127:0] io_bar_resp_bits_rdata,
+  input  [127:0] io_bar_resp_bits_rdataBuf,
   output         io_dbg_hit,
+  output         io_dbg_hitBuf,
   output         io_dbg_hitWay,
   output         io_dbg_replaceWay
 );
@@ -6484,7 +6771,7 @@ module DCache(
   reg [31:0] _RAND_12;
   reg [127:0] _RAND_13;
   reg [31:0] _RAND_14;
-  reg [31:0] _RAND_15;
+  reg [127:0] _RAND_15;
   reg [31:0] _RAND_16;
   reg [31:0] _RAND_17;
   reg [31:0] _RAND_18;
@@ -6498,53 +6785,73 @@ module DCache(
   reg [31:0] _RAND_26;
   reg [31:0] _RAND_27;
   reg [31:0] _RAND_28;
+  reg [31:0] _RAND_29;
+  reg [31:0] _RAND_30;
+  reg [31:0] _RAND_31;
+  reg [31:0] _RAND_32;
+  reg [31:0] _RAND_33;
+  reg [31:0] _RAND_34;
+  reg [31:0] _RAND_35;
 `endif // RANDOMIZE_REG_INIT
-  wire  data_0_clock; // @[DCache.scala 54:48]
-  wire  data_0_reset; // @[DCache.scala 54:48]
-  wire  data_0_io_web; // @[DCache.scala 54:48]
-  wire [7:0] data_0_io_addra; // @[DCache.scala 54:48]
-  wire [7:0] data_0_io_addrb; // @[DCache.scala 54:48]
-  wire [127:0] data_0_io_dinb; // @[DCache.scala 54:48]
-  wire [127:0] data_0_io_douta; // @[DCache.scala 54:48]
-  wire  data_1_clock; // @[DCache.scala 54:48]
-  wire  data_1_reset; // @[DCache.scala 54:48]
-  wire  data_1_io_web; // @[DCache.scala 54:48]
-  wire [7:0] data_1_io_addra; // @[DCache.scala 54:48]
-  wire [7:0] data_1_io_addrb; // @[DCache.scala 54:48]
-  wire [127:0] data_1_io_dinb; // @[DCache.scala 54:48]
-  wire [127:0] data_1_io_douta; // @[DCache.scala 54:48]
-  wire  meta_0_clock; // @[DCache.scala 55:48]
-  wire  meta_0_reset; // @[DCache.scala 55:48]
-  wire [7:0] meta_0_io_indexFetch; // @[DCache.scala 55:48]
-  wire [7:0] meta_0_io_indexUpdate; // @[DCache.scala 55:48]
-  wire [19:0] meta_0_io_tagUpdate; // @[DCache.scala 55:48]
-  wire  meta_0_io_update; // @[DCache.scala 55:48]
-  wire  meta_0_io_write; // @[DCache.scala 55:48]
-  wire  meta_0_io_hit; // @[DCache.scala 55:48]
-  wire [19:0] meta_0_io_tagFetch; // @[DCache.scala 55:48]
-  wire  meta_0_io_dirty; // @[DCache.scala 55:48]
-  wire  meta_1_clock; // @[DCache.scala 55:48]
-  wire  meta_1_reset; // @[DCache.scala 55:48]
-  wire [7:0] meta_1_io_indexFetch; // @[DCache.scala 55:48]
-  wire [7:0] meta_1_io_indexUpdate; // @[DCache.scala 55:48]
-  wire [19:0] meta_1_io_tagUpdate; // @[DCache.scala 55:48]
-  wire  meta_1_io_update; // @[DCache.scala 55:48]
-  wire  meta_1_io_write; // @[DCache.scala 55:48]
-  wire  meta_1_io_hit; // @[DCache.scala 55:48]
-  wire [19:0] meta_1_io_tagFetch; // @[DCache.scala 55:48]
-  wire  meta_1_io_dirty; // @[DCache.scala 55:48]
-  wire [1:0] arOffset = io_cpu_req_bits_addr[3:2]; // @[DCache.scala 64:40]
-  wire [7:0] arIndex = io_cpu_req_bits_addr[11:4]; // @[DCache.scala 65:40]
-  wire [19:0] arTag = io_cpu_req_bits_addr[31:12]; // @[DCache.scala 66:40]
-  reg  mpValid; // @[DCache.scala 85:26]
-  reg  mpState; // @[DCache.scala 164:26]
-  wire  _T_31 = ~mpState; // @[Conditional.scala 37:30]
-  wire  mpWriteCache = mpValid & mpState & io_bar_resp_valid; // @[DCache.scala 166:53]
-  wire  _GEN_59 = mpState & mpWriteCache; // @[Conditional.scala 39:67 DCache.scala 211:29 DCache.scala 199:17]
-  wire  _GEN_63 = _T_31 ? 1'h0 : _GEN_59; // @[Conditional.scala 40:58 DCache.scala 199:17]
-  wire  mpRespValid = mpValid & _GEN_63; // @[DCache.scala 200:20 DCache.scala 199:17]
-  wire  mpStall = mpValid & ~mpRespValid; // @[DCache.scala 87:27]
-  wire  _hpReq_T = ~mpStall; // @[DCache.scala 75:50]
+  wire  data_0_clock; // @[DCache.scala 81:48]
+  wire  data_0_reset; // @[DCache.scala 81:48]
+  wire  data_0_io_web; // @[DCache.scala 81:48]
+  wire [7:0] data_0_io_addra; // @[DCache.scala 81:48]
+  wire [7:0] data_0_io_addrb; // @[DCache.scala 81:48]
+  wire [127:0] data_0_io_dinb; // @[DCache.scala 81:48]
+  wire [127:0] data_0_io_douta; // @[DCache.scala 81:48]
+  wire  data_1_clock; // @[DCache.scala 81:48]
+  wire  data_1_reset; // @[DCache.scala 81:48]
+  wire  data_1_io_web; // @[DCache.scala 81:48]
+  wire [7:0] data_1_io_addra; // @[DCache.scala 81:48]
+  wire [7:0] data_1_io_addrb; // @[DCache.scala 81:48]
+  wire [127:0] data_1_io_dinb; // @[DCache.scala 81:48]
+  wire [127:0] data_1_io_douta; // @[DCache.scala 81:48]
+  wire  meta_0_clock; // @[DCache.scala 82:48]
+  wire  meta_0_reset; // @[DCache.scala 82:48]
+  wire [7:0] meta_0_io_indexFetch; // @[DCache.scala 82:48]
+  wire [7:0] meta_0_io_indexUpdate; // @[DCache.scala 82:48]
+  wire [19:0] meta_0_io_tagUpdate; // @[DCache.scala 82:48]
+  wire  meta_0_io_update; // @[DCache.scala 82:48]
+  wire  meta_0_io_write; // @[DCache.scala 82:48]
+  wire  meta_0_io_hit; // @[DCache.scala 82:48]
+  wire [19:0] meta_0_io_tagFetch; // @[DCache.scala 82:48]
+  wire  meta_0_io_dirty; // @[DCache.scala 82:48]
+  wire  meta_1_clock; // @[DCache.scala 82:48]
+  wire  meta_1_reset; // @[DCache.scala 82:48]
+  wire [7:0] meta_1_io_indexFetch; // @[DCache.scala 82:48]
+  wire [7:0] meta_1_io_indexUpdate; // @[DCache.scala 82:48]
+  wire [19:0] meta_1_io_tagUpdate; // @[DCache.scala 82:48]
+  wire  meta_1_io_update; // @[DCache.scala 82:48]
+  wire  meta_1_io_write; // @[DCache.scala 82:48]
+  wire  meta_1_io_hit; // @[DCache.scala 82:48]
+  wire [19:0] meta_1_io_tagFetch; // @[DCache.scala 82:48]
+  wire  meta_1_io_dirty; // @[DCache.scala 82:48]
+  wire  dataBuf_clock; // @[DCache.scala 83:39]
+  wire  dataBuf_reset; // @[DCache.scala 83:39]
+  wire  dataBuf_io_web; // @[DCache.scala 83:39]
+  wire [127:0] dataBuf_io_dinb; // @[DCache.scala 83:39]
+  wire [127:0] dataBuf_io_douta; // @[DCache.scala 83:39]
+  wire  metaBuf_clock; // @[DCache.scala 84:39]
+  wire  metaBuf_reset; // @[DCache.scala 84:39]
+  wire [7:0] metaBuf_io_indexUpdate; // @[DCache.scala 84:39]
+  wire [19:0] metaBuf_io_tagUpdate; // @[DCache.scala 84:39]
+  wire  metaBuf_io_update; // @[DCache.scala 84:39]
+  wire  metaBuf_io_write; // @[DCache.scala 84:39]
+  wire  metaBuf_io_hit; // @[DCache.scala 84:39]
+  wire  metaBuf_io_dirty; // @[DCache.scala 84:39]
+  wire [1:0] arOffset = io_cpu_req_bits_addr[3:2]; // @[DCache.scala 97:40]
+  wire [7:0] arIndex = io_cpu_req_bits_addr[11:4]; // @[DCache.scala 98:40]
+  wire [19:0] arTag = io_cpu_req_bits_addr[31:12]; // @[DCache.scala 99:40]
+  reg  mpValid; // @[DCache.scala 119:26]
+  reg  mpState; // @[DCache.scala 138:26]
+  wire  _T_46 = ~mpState; // @[Conditional.scala 37:30]
+  wire  mpWriteCache = mpValid & mpState & io_bar_resp_valid; // @[DCache.scala 231:53]
+  wire  _GEN_65 = mpState & mpWriteCache; // @[Conditional.scala 39:67 DCache.scala 283:29 DCache.scala 271:17]
+  wire  _GEN_69 = _T_46 ? 1'h0 : _GEN_65; // @[Conditional.scala 40:58 DCache.scala 271:17]
+  wire  mpRespValid = mpValid & _GEN_69; // @[DCache.scala 272:20 DCache.scala 271:17]
+  wire  mpStall = mpValid & ~mpRespValid; // @[DCache.scala 121:27]
+  wire  _hpReq_T = ~mpStall; // @[DCache.scala 109:50]
   reg [31:0] hpReq_addr; // @[Reg.scala 15:16]
   reg  hpReq_wen; // @[Reg.scala 15:16]
   reg [31:0] hpReq_wdata; // @[Reg.scala 15:16]
@@ -6552,131 +6859,165 @@ module DCache(
   reg [7:0] hpIndex; // @[Reg.scala 15:16]
   reg [19:0] hpTag; // @[Reg.scala 15:16]
   reg [1:0] hpOffset; // @[Reg.scala 15:16]
-  reg  hpValid; // @[DCache.scala 79:30]
-  wire  _hpRespValid_T = meta_0_io_hit | meta_1_io_hit; // @[DCache.scala 80:50]
-  wire  hpRespValid = hpValid & (meta_0_io_hit | meta_1_io_hit); // @[DCache.scala 80:31]
-  reg  mpReq_wen; // @[DCache.scala 83:26]
-  reg [31:0] mpReq_wdata; // @[DCache.scala 83:26]
-  reg [31:0] mpDirtyAddr; // @[DCache.scala 91:27]
-  reg [127:0] mpDirtyData; // @[DCache.scala 92:27]
-  reg [3:0] mpOffset; // @[DCache.scala 93:27]
-  reg [7:0] mpIndex; // @[DCache.scala 94:27]
-  reg [19:0] mpTag; // @[DCache.scala 95:27]
+  reg  hpValid; // @[DCache.scala 113:30]
+  wire  hasHit = meta_0_io_hit | meta_1_io_hit; // @[DCache.scala 156:31]
+  wire  hitBuf = metaBuf_io_hit; // @[DCache.scala 103:41 DCache.scala 173:16]
+  wire  hpRespValid = hpValid & (hasHit | hitBuf); // @[DCache.scala 114:45]
+  reg  mpReq_wen; // @[DCache.scala 117:26]
+  reg [31:0] mpReq_wdata; // @[DCache.scala 117:26]
+  reg [31:0] mpDirtyAddr; // @[DCache.scala 125:27]
+  reg [127:0] mpDirtyData; // @[DCache.scala 126:27]
+  reg [31:0] mpDirtyBufAddr; // @[DCache.scala 127:43]
+  reg [127:0] mpDirtyBufData; // @[DCache.scala 128:43]
+  reg [3:0] mpOffset; // @[DCache.scala 129:27]
+  reg [7:0] mpIndex; // @[DCache.scala 130:27]
+  reg [19:0] mpTag; // @[DCache.scala 131:27]
   wire [31:0] mpRefillAddr = {mpTag,mpIndex,4'h0}; // @[Cat.scala 30:58]
-  reg [31:0] mpMask; // @[DCache.scala 97:23]
-  reg [4:0] mpShift; // @[DCache.scala 98:23]
-  wire  _hpValid_T_1 = hpValid & ~_hpRespValid_T; // @[DCache.scala 111:29]
-  reg  REG; // @[DCache.scala 118:38]
+  reg [31:0] mpMask; // @[DCache.scala 134:23]
+  reg [4:0] mpShift; // @[DCache.scala 135:23]
+  wire  _hpValid_T_1 = hpValid & ~hasHit; // @[DCache.scala 158:29]
+  wire  _hpValid_T_7 = _hpValid_T_1 & ~hitBuf; // @[DCache.scala 160:44]
+  reg  REG; // @[DCache.scala 167:38]
   wire [127:0] _WIRE_1 = data_0_io_dinb;
-  reg [31:0] REG_1_0; // @[DCache.scala 119:40]
-  reg [31:0] REG_1_1; // @[DCache.scala 119:40]
-  reg [31:0] REG_1_2; // @[DCache.scala 119:40]
-  reg [31:0] REG_1_3; // @[DCache.scala 119:40]
+  reg [31:0] REG_1_0; // @[DCache.scala 168:39]
+  reg [31:0] REG_1_1; // @[DCache.scala 168:39]
+  reg [31:0] REG_1_2; // @[DCache.scala 168:39]
+  reg [31:0] REG_1_3; // @[DCache.scala 168:39]
   wire [127:0] _WIRE_3 = data_0_io_douta;
-  wire [31:0] hpFetchLine_0_0 = REG ? REG_1_0 : _WIRE_3[31:0]; // @[DCache.scala 118:30]
-  wire [31:0] hpFetchLine_0_1 = REG ? REG_1_1 : _WIRE_3[63:32]; // @[DCache.scala 118:30]
-  wire [31:0] hpFetchLine_0_2 = REG ? REG_1_2 : _WIRE_3[95:64]; // @[DCache.scala 118:30]
-  wire [31:0] hpFetchLine_0_3 = REG ? REG_1_3 : _WIRE_3[127:96]; // @[DCache.scala 118:30]
-  reg  REG_2; // @[DCache.scala 118:38]
+  wire [31:0] hpFetchLine_0_0 = REG ? REG_1_0 : _WIRE_3[31:0]; // @[DCache.scala 167:30]
+  wire [31:0] hpFetchLine_0_1 = REG ? REG_1_1 : _WIRE_3[63:32]; // @[DCache.scala 167:30]
+  wire [31:0] hpFetchLine_0_2 = REG ? REG_1_2 : _WIRE_3[95:64]; // @[DCache.scala 167:30]
+  wire [31:0] hpFetchLine_0_3 = REG ? REG_1_3 : _WIRE_3[127:96]; // @[DCache.scala 167:30]
+  reg  REG_2; // @[DCache.scala 167:38]
   wire [127:0] _WIRE_5 = data_1_io_dinb;
-  reg [31:0] REG_3_0; // @[DCache.scala 119:40]
-  reg [31:0] REG_3_1; // @[DCache.scala 119:40]
-  reg [31:0] REG_3_2; // @[DCache.scala 119:40]
-  reg [31:0] REG_3_3; // @[DCache.scala 119:40]
+  reg [31:0] REG_3_0; // @[DCache.scala 168:39]
+  reg [31:0] REG_3_1; // @[DCache.scala 168:39]
+  reg [31:0] REG_3_2; // @[DCache.scala 168:39]
+  reg [31:0] REG_3_3; // @[DCache.scala 168:39]
   wire [127:0] _WIRE_7 = data_1_io_douta;
-  wire [31:0] hpFetchLine_1_0 = REG_2 ? REG_3_0 : _WIRE_7[31:0]; // @[DCache.scala 118:30]
-  wire [31:0] hpFetchLine_1_1 = REG_2 ? REG_3_1 : _WIRE_7[63:32]; // @[DCache.scala 118:30]
-  wire [31:0] hpFetchLine_1_2 = REG_2 ? REG_3_2 : _WIRE_7[95:64]; // @[DCache.scala 118:30]
-  wire [31:0] hpFetchLine_1_3 = REG_2 ? REG_3_3 : _WIRE_7[127:96]; // @[DCache.scala 118:30]
+  wire [31:0] hpFetchLine_1_0 = REG_2 ? REG_3_0 : _WIRE_7[31:0]; // @[DCache.scala 167:30]
+  wire [31:0] hpFetchLine_1_1 = REG_2 ? REG_3_1 : _WIRE_7[63:32]; // @[DCache.scala 167:30]
+  wire [31:0] hpFetchLine_1_2 = REG_2 ? REG_3_2 : _WIRE_7[95:64]; // @[DCache.scala 167:30]
+  wire [31:0] hpFetchLine_1_3 = REG_2 ? REG_3_3 : _WIRE_7[127:96]; // @[DCache.scala 167:30]
+  reg  REG_4; // @[DCache.scala 175:41]
+  wire [127:0] _T_24 = dataBuf_io_dinb; // @[DCache.scala 176:58]
+  reg [31:0] REG_5_0; // @[DCache.scala 176:42]
+  reg [31:0] REG_5_1; // @[DCache.scala 176:42]
+  reg [31:0] REG_5_2; // @[DCache.scala 176:42]
+  reg [31:0] REG_5_3; // @[DCache.scala 176:42]
+  wire [127:0] _T_29 = dataBuf_io_douta; // @[DCache.scala 177:51]
+  wire [31:0] hpFetchLine_2_0 = REG_4 ? REG_5_0 : _T_29[31:0]; // @[DCache.scala 175:33]
+  wire [31:0] hpFetchLine_2_1 = REG_4 ? REG_5_1 : _T_29[63:32]; // @[DCache.scala 175:33]
+  wire [31:0] hpFetchLine_2_2 = REG_4 ? REG_5_2 : _T_29[95:64]; // @[DCache.scala 175:33]
+  wire [31:0] hpFetchLine_2_3 = REG_4 ? REG_5_3 : _T_29[127:96]; // @[DCache.scala 175:33]
   wire [31:0] _hpMask_T_1 = 2'h0 == hpReq_mtype ? 32'hff : 32'hffffffff; // @[Mux.scala 80:57]
   wire [31:0] hpMask = 2'h1 == hpReq_mtype ? 32'hffff : _hpMask_T_1; // @[Mux.scala 80:57]
-  wire [4:0] hpShift = {hpReq_addr[1:0], 3'h0}; // @[DCache.scala 129:50]
-  wire [31:0] _hpWriteWord_0_T = hpMask & hpReq_wdata; // @[DCache.scala 135:36]
-  wire [62:0] _GEN_68 = {{31'd0}, _hpWriteWord_0_T}; // @[DCache.scala 135:51]
-  wire [62:0] _hpWriteWord_0_T_1 = _GEN_68 << hpShift; // @[DCache.scala 135:51]
-  wire [62:0] _GEN_69 = {{31'd0}, hpMask}; // @[DCache.scala 135:85]
-  wire [62:0] _hpWriteWord_0_T_2 = _GEN_69 << hpShift; // @[DCache.scala 135:85]
-  wire [62:0] _hpWriteWord_0_T_3 = ~_hpWriteWord_0_T_2; // @[DCache.scala 135:76]
-  wire [31:0] _GEN_8 = 2'h1 == hpOffset ? hpFetchLine_0_1 : hpFetchLine_0_0; // @[DCache.scala 135:107 DCache.scala 135:107]
-  wire [31:0] _GEN_9 = 2'h2 == hpOffset ? hpFetchLine_0_2 : _GEN_8; // @[DCache.scala 135:107 DCache.scala 135:107]
-  wire [31:0] _GEN_10 = 2'h3 == hpOffset ? hpFetchLine_0_3 : _GEN_9; // @[DCache.scala 135:107 DCache.scala 135:107]
-  wire [62:0] _GEN_70 = {{31'd0}, _GEN_10}; // @[DCache.scala 135:107]
-  wire [62:0] _hpWriteWord_0_T_4 = _hpWriteWord_0_T_3 & _GEN_70; // @[DCache.scala 135:107]
-  wire [62:0] _hpWriteWord_0_T_5 = _hpWriteWord_0_T_1 | _hpWriteWord_0_T_4; // @[DCache.scala 135:72]
-  wire [31:0] hpWriteWord_0 = _hpWriteWord_0_T_5[31:0]; // @[DCache.scala 130:27 DCache.scala 135:24]
-  wire [31:0] hpWriteLine_0_0 = 2'h0 == hpOffset ? hpWriteWord_0 : hpFetchLine_0_0; // @[DCache.scala 138:34 DCache.scala 138:34 DCache.scala 137:24]
-  wire [31:0] hpWriteLine_0_1 = 2'h1 == hpOffset ? hpWriteWord_0 : hpFetchLine_0_1; // @[DCache.scala 138:34 DCache.scala 138:34 DCache.scala 137:24]
-  wire [31:0] hpWriteLine_0_2 = 2'h2 == hpOffset ? hpWriteWord_0 : hpFetchLine_0_2; // @[DCache.scala 138:34 DCache.scala 138:34 DCache.scala 137:24]
-  wire [31:0] hpWriteLine_0_3 = 2'h3 == hpOffset ? hpWriteWord_0 : hpFetchLine_0_3; // @[DCache.scala 138:34 DCache.scala 138:34 DCache.scala 137:24]
-  wire [31:0] _GEN_16 = 2'h1 == hpOffset ? hpFetchLine_1_1 : hpFetchLine_1_0; // @[DCache.scala 135:107 DCache.scala 135:107]
-  wire [31:0] _GEN_17 = 2'h2 == hpOffset ? hpFetchLine_1_2 : _GEN_16; // @[DCache.scala 135:107 DCache.scala 135:107]
-  wire [31:0] _GEN_18 = 2'h3 == hpOffset ? hpFetchLine_1_3 : _GEN_17; // @[DCache.scala 135:107 DCache.scala 135:107]
-  wire [62:0] _GEN_73 = {{31'd0}, _GEN_18}; // @[DCache.scala 135:107]
-  wire [62:0] _hpWriteWord_1_T_4 = _hpWriteWord_0_T_3 & _GEN_73; // @[DCache.scala 135:107]
-  wire [62:0] _hpWriteWord_1_T_5 = _hpWriteWord_0_T_1 | _hpWriteWord_1_T_4; // @[DCache.scala 135:72]
-  wire [31:0] hpWriteWord_1 = _hpWriteWord_1_T_5[31:0]; // @[DCache.scala 130:27 DCache.scala 135:24]
-  wire [31:0] hpWriteLine_1_0 = 2'h0 == hpOffset ? hpWriteWord_1 : hpFetchLine_1_0; // @[DCache.scala 138:34 DCache.scala 138:34 DCache.scala 137:24]
-  wire [31:0] hpWriteLine_1_1 = 2'h1 == hpOffset ? hpWriteWord_1 : hpFetchLine_1_1; // @[DCache.scala 138:34 DCache.scala 138:34 DCache.scala 137:24]
-  wire [31:0] hpWriteLine_1_2 = 2'h2 == hpOffset ? hpWriteWord_1 : hpFetchLine_1_2; // @[DCache.scala 138:34 DCache.scala 138:34 DCache.scala 137:24]
-  wire [31:0] hpWriteLine_1_3 = 2'h3 == hpOffset ? hpWriteWord_1 : hpFetchLine_1_3; // @[DCache.scala 138:34 DCache.scala 138:34 DCache.scala 137:24]
-  wire [31:0] _T_22_0 = meta_0_io_hit ? hpFetchLine_0_0 : hpFetchLine_1_0; // @[DCache.scala 146:29]
-  wire [31:0] _T_22_1 = meta_0_io_hit ? hpFetchLine_0_1 : hpFetchLine_1_1; // @[DCache.scala 146:29]
-  wire [31:0] _T_22_2 = meta_0_io_hit ? hpFetchLine_0_2 : hpFetchLine_1_2; // @[DCache.scala 146:29]
-  wire [31:0] _T_22_3 = meta_0_io_hit ? hpFetchLine_0_3 : hpFetchLine_1_3; // @[DCache.scala 146:29]
-  wire [31:0] rdata_0 = _hpRespValid_T ? _T_22_0 : 32'h0; // @[DCache.scala 146:17]
-  wire [31:0] rdata_1 = _hpRespValid_T ? _T_22_1 : 32'h0; // @[DCache.scala 146:17]
-  wire [31:0] rdata_2 = _hpRespValid_T ? _T_22_2 : 32'h0; // @[DCache.scala 146:17]
-  wire [31:0] rdata_3 = _hpRespValid_T ? _T_22_3 : 32'h0; // @[DCache.scala 146:17]
-  wire [31:0] mpRefillLine_0 = io_bar_resp_bits_rdata[31:0]; // @[DCache.scala 174:56]
-  wire [31:0] mpRefillLine_1 = io_bar_resp_bits_rdata[63:32]; // @[DCache.scala 174:56]
-  wire [31:0] _GEN_24 = 2'h1 == mpOffset[1:0] ? mpRefillLine_1 : mpRefillLine_0; // @[DCache.scala 147:67 DCache.scala 147:67]
-  wire [31:0] mpRefillLine_2 = io_bar_resp_bits_rdata[95:64]; // @[DCache.scala 174:56]
-  wire [31:0] _GEN_25 = 2'h2 == mpOffset[1:0] ? mpRefillLine_2 : _GEN_24; // @[DCache.scala 147:67 DCache.scala 147:67]
-  wire [31:0] mpRefillLine_3 = io_bar_resp_bits_rdata[127:96]; // @[DCache.scala 174:56]
-  wire [31:0] _GEN_26 = 2'h3 == mpOffset[1:0] ? mpRefillLine_3 : _GEN_25; // @[DCache.scala 147:67 DCache.scala 147:67]
-  wire [31:0] _io_cpu_resp_bits_rdata_T_1 = _GEN_26 & mpMask; // @[DCache.scala 147:67]
-  wire [31:0] _GEN_28 = 2'h1 == hpOffset ? rdata_1 : rdata_0; // @[DCache.scala 147:93 DCache.scala 147:93]
-  wire [31:0] _GEN_29 = 2'h2 == hpOffset ? rdata_2 : _GEN_28; // @[DCache.scala 147:93 DCache.scala 147:93]
-  wire [31:0] _GEN_30 = 2'h3 == hpOffset ? rdata_3 : _GEN_29; // @[DCache.scala 147:93 DCache.scala 147:93]
-  wire [31:0] _io_cpu_resp_bits_rdata_T_2 = _GEN_30 & hpMask; // @[DCache.scala 147:93]
-  wire  _data_0_io_web_T_4 = hpValid & meta_0_io_hit & hpReq_wen; // @[DCache.scala 150:107]
-  wire [31:0] _mpWriteWord_T = mpMask & mpReq_wdata; // @[DCache.scala 196:32]
-  wire [62:0] _GEN_74 = {{31'd0}, _mpWriteWord_T}; // @[DCache.scala 196:47]
-  wire [62:0] _mpWriteWord_T_1 = _GEN_74 << mpShift; // @[DCache.scala 196:47]
-  wire [62:0] _GEN_75 = {{31'd0}, mpMask}; // @[DCache.scala 196:81]
-  wire [62:0] _mpWriteWord_T_2 = _GEN_75 << mpShift; // @[DCache.scala 196:81]
-  wire [62:0] _mpWriteWord_T_3 = ~_mpWriteWord_T_2; // @[DCache.scala 196:72]
-  wire [62:0] _GEN_76 = {{31'd0}, _GEN_26}; // @[DCache.scala 196:103]
-  wire [62:0] _mpWriteWord_T_5 = _mpWriteWord_T_3 & _GEN_76; // @[DCache.scala 196:103]
-  wire [62:0] mpWriteWord = _mpWriteWord_T_1 | _mpWriteWord_T_5; // @[DCache.scala 196:68]
-  wire [31:0] mpWriteLine_1 = 2'h1 == mpOffset[1:0] ? mpWriteWord[31:0] : mpRefillLine_1; // @[DCache.scala 198:27 DCache.scala 198:27 DCache.scala 197:17]
-  wire [31:0] mpWriteLine_0 = 2'h0 == mpOffset[1:0] ? mpWriteWord[31:0] : mpRefillLine_0; // @[DCache.scala 198:27 DCache.scala 198:27 DCache.scala 197:17]
-  wire [31:0] mpWriteLine_3 = 2'h3 == mpOffset[1:0] ? mpWriteWord[31:0] : mpRefillLine_3; // @[DCache.scala 198:27 DCache.scala 198:27 DCache.scala 197:17]
-  wire [31:0] mpWriteLine_2 = 2'h2 == mpOffset[1:0] ? mpWriteWord[31:0] : mpRefillLine_2; // @[DCache.scala 198:27 DCache.scala 198:27 DCache.scala 197:17]
-  wire [127:0] _data_0_io_dinb_T = {mpWriteLine_3,mpWriteLine_2,mpWriteLine_1,mpWriteLine_0}; // @[DCache.scala 152:74]
-  wire [127:0] _data_0_io_dinb_T_1 = mpReq_wen ? _data_0_io_dinb_T : io_bar_resp_bits_rdata; // @[DCache.scala 152:44]
-  wire [127:0] _data_0_io_dinb_T_2 = {hpWriteLine_0_3,hpWriteLine_0_2,hpWriteLine_0_1,hpWriteLine_0_0}; // @[DCache.scala 152:133]
-  wire  _data_1_io_web_T_4 = hpValid & meta_1_io_hit & hpReq_wen; // @[DCache.scala 150:107]
-  wire [127:0] _data_1_io_dinb_T_2 = {hpWriteLine_1_3,hpWriteLine_1_2,hpWriteLine_1_1,hpWriteLine_1_0}; // @[DCache.scala 152:133]
-  wire  _meta_0_io_update_T_2 = mpValid ? 1'h0 : _data_0_io_web_T_4; // @[DCache.scala 159:33]
-  wire  _meta_1_io_update_T_2 = mpValid ? 1'h0 : _data_1_io_web_T_4; // @[DCache.scala 159:33]
-  wire [31:0] _io_bar_req_bits_addr_T_1 = _T_31 ? mpDirtyAddr : mpRefillAddr; // @[DCache.scala 168:46]
-  wire  _io_bar_req_bits_wen_T_1 = mpTag[0] ? meta_1_io_dirty : meta_0_io_dirty; // @[DCache.scala 171:46]
-  wire  _mpState_T = meta_1_io_dirty ? 1'h0 : 1'h1; // @[DCache.scala 187:31]
-  wire [31:0] _mpDirtyAddr_T = {meta_1_io_tagFetch,hpIndex,4'h0}; // @[Cat.scala 30:58]
-  wire [127:0] _mpDirtyData_T = {hpFetchLine_1_3,hpFetchLine_1_2,hpFetchLine_1_1,hpFetchLine_1_0}; // @[DCache.scala 189:51]
-  wire  _mpState_T_1 = meta_0_io_dirty ? 1'h0 : 1'h1; // @[DCache.scala 191:31]
-  wire [31:0] _mpDirtyAddr_T_1 = {meta_0_io_tagFetch,hpIndex,4'h0}; // @[Cat.scala 30:58]
-  wire [127:0] _mpDirtyData_T_1 = {hpFetchLine_0_3,hpFetchLine_0_2,hpFetchLine_0_1,hpFetchLine_0_0}; // @[DCache.scala 193:51]
-  wire  _GEN_31 = hpTag[0] ? _mpState_T : _mpState_T_1; // @[DCache.scala 186:25 DCache.scala 187:25 DCache.scala 191:25]
-  wire  _GEN_44 = _hpReq_T ? _GEN_31 : mpState; // @[DCache.scala 177:21 DCache.scala 164:26]
-  wire  _GEN_55 = hpTag[0] | _meta_1_io_update_T_2; // @[DCache.scala 206:33 DCache.scala 207:39 DCache.scala 159:27]
-  wire  _GEN_56 = hpTag[0] ? _meta_0_io_update_T_2 : 1'h1; // @[DCache.scala 206:33 DCache.scala 159:27 DCache.scala 209:39]
-  wire  _GEN_57 = mpState ? _GEN_55 : _meta_1_io_update_T_2; // @[Conditional.scala 39:67 DCache.scala 159:27]
-  wire  _GEN_58 = mpState ? _GEN_56 : _meta_0_io_update_T_2; // @[Conditional.scala 39:67 DCache.scala 159:27]
-  wire  _GEN_61 = _T_31 ? _meta_1_io_update_T_2 : _GEN_57; // @[Conditional.scala 40:58 DCache.scala 159:27]
-  wire  _GEN_62 = _T_31 ? _meta_0_io_update_T_2 : _GEN_58; // @[Conditional.scala 40:58 DCache.scala 159:27]
-  DualPortBRAM data_0 ( // @[DCache.scala 54:48]
+  wire [4:0] hpShift = {hpReq_addr[1:0], 3'h0}; // @[DCache.scala 186:50]
+  wire [31:0] _hpWriteWord_0_T = hpMask & hpReq_wdata; // @[DCache.scala 189:36]
+  wire [62:0] _GEN_74 = {{31'd0}, _hpWriteWord_0_T}; // @[DCache.scala 189:51]
+  wire [62:0] _hpWriteWord_0_T_1 = _GEN_74 << hpShift; // @[DCache.scala 189:51]
+  wire [62:0] _GEN_75 = {{31'd0}, hpMask}; // @[DCache.scala 189:85]
+  wire [62:0] _hpWriteWord_0_T_2 = _GEN_75 << hpShift; // @[DCache.scala 189:85]
+  wire [62:0] _hpWriteWord_0_T_3 = ~_hpWriteWord_0_T_2; // @[DCache.scala 189:76]
+  wire [31:0] _GEN_8 = 2'h1 == hpOffset ? hpFetchLine_0_1 : hpFetchLine_0_0; // @[DCache.scala 189:107 DCache.scala 189:107]
+  wire [31:0] _GEN_9 = 2'h2 == hpOffset ? hpFetchLine_0_2 : _GEN_8; // @[DCache.scala 189:107 DCache.scala 189:107]
+  wire [31:0] _GEN_10 = 2'h3 == hpOffset ? hpFetchLine_0_3 : _GEN_9; // @[DCache.scala 189:107 DCache.scala 189:107]
+  wire [62:0] _GEN_76 = {{31'd0}, _GEN_10}; // @[DCache.scala 189:107]
+  wire [62:0] _hpWriteWord_0_T_4 = _hpWriteWord_0_T_3 & _GEN_76; // @[DCache.scala 189:107]
+  wire [62:0] _hpWriteWord_0_T_5 = _hpWriteWord_0_T_1 | _hpWriteWord_0_T_4; // @[DCache.scala 189:72]
+  wire [31:0] hpWriteWord_0 = _hpWriteWord_0_T_5[31:0]; // @[DCache.scala 187:27 DCache.scala 189:24]
+  wire [31:0] hpWriteLine_0_0 = 2'h0 == hpOffset ? hpWriteWord_0 : hpFetchLine_0_0; // @[DCache.scala 191:34 DCache.scala 191:34 DCache.scala 190:24]
+  wire [31:0] hpWriteLine_0_1 = 2'h1 == hpOffset ? hpWriteWord_0 : hpFetchLine_0_1; // @[DCache.scala 191:34 DCache.scala 191:34 DCache.scala 190:24]
+  wire [31:0] hpWriteLine_0_2 = 2'h2 == hpOffset ? hpWriteWord_0 : hpFetchLine_0_2; // @[DCache.scala 191:34 DCache.scala 191:34 DCache.scala 190:24]
+  wire [31:0] hpWriteLine_0_3 = 2'h3 == hpOffset ? hpWriteWord_0 : hpFetchLine_0_3; // @[DCache.scala 191:34 DCache.scala 191:34 DCache.scala 190:24]
+  wire [31:0] _GEN_16 = 2'h1 == hpOffset ? hpFetchLine_1_1 : hpFetchLine_1_0; // @[DCache.scala 189:107 DCache.scala 189:107]
+  wire [31:0] _GEN_17 = 2'h2 == hpOffset ? hpFetchLine_1_2 : _GEN_16; // @[DCache.scala 189:107 DCache.scala 189:107]
+  wire [31:0] _GEN_18 = 2'h3 == hpOffset ? hpFetchLine_1_3 : _GEN_17; // @[DCache.scala 189:107 DCache.scala 189:107]
+  wire [62:0] _GEN_79 = {{31'd0}, _GEN_18}; // @[DCache.scala 189:107]
+  wire [62:0] _hpWriteWord_1_T_4 = _hpWriteWord_0_T_3 & _GEN_79; // @[DCache.scala 189:107]
+  wire [62:0] _hpWriteWord_1_T_5 = _hpWriteWord_0_T_1 | _hpWriteWord_1_T_4; // @[DCache.scala 189:72]
+  wire [31:0] hpWriteWord_1 = _hpWriteWord_1_T_5[31:0]; // @[DCache.scala 187:27 DCache.scala 189:24]
+  wire [31:0] hpWriteLine_1_0 = 2'h0 == hpOffset ? hpWriteWord_1 : hpFetchLine_1_0; // @[DCache.scala 191:34 DCache.scala 191:34 DCache.scala 190:24]
+  wire [31:0] hpWriteLine_1_1 = 2'h1 == hpOffset ? hpWriteWord_1 : hpFetchLine_1_1; // @[DCache.scala 191:34 DCache.scala 191:34 DCache.scala 190:24]
+  wire [31:0] hpWriteLine_1_2 = 2'h2 == hpOffset ? hpWriteWord_1 : hpFetchLine_1_2; // @[DCache.scala 191:34 DCache.scala 191:34 DCache.scala 190:24]
+  wire [31:0] hpWriteLine_1_3 = 2'h3 == hpOffset ? hpWriteWord_1 : hpFetchLine_1_3; // @[DCache.scala 191:34 DCache.scala 191:34 DCache.scala 190:24]
+  wire [31:0] _GEN_24 = 2'h1 == hpOffset ? hpFetchLine_2_1 : hpFetchLine_2_0; // @[DCache.scala 194:110 DCache.scala 194:110]
+  wire [31:0] _GEN_25 = 2'h2 == hpOffset ? hpFetchLine_2_2 : _GEN_24; // @[DCache.scala 194:110 DCache.scala 194:110]
+  wire [31:0] _GEN_26 = 2'h3 == hpOffset ? hpFetchLine_2_3 : _GEN_25; // @[DCache.scala 194:110 DCache.scala 194:110]
+  wire [62:0] _GEN_82 = {{31'd0}, _GEN_26}; // @[DCache.scala 194:110]
+  wire [62:0] _hpWriteWord_2_T_4 = _hpWriteWord_0_T_3 & _GEN_82; // @[DCache.scala 194:110]
+  wire [62:0] _hpWriteWord_2_T_5 = _hpWriteWord_0_T_1 | _hpWriteWord_2_T_4; // @[DCache.scala 194:75]
+  wire [31:0] hpWriteWord_2 = _hpWriteWord_2_T_5[31:0]; // @[DCache.scala 187:27 DCache.scala 194:27]
+  wire [31:0] hpWriteLine_2_0 = 2'h0 == hpOffset ? hpWriteWord_2 : hpFetchLine_2_0; // @[DCache.scala 196:37 DCache.scala 196:37 DCache.scala 195:27]
+  wire [31:0] hpWriteLine_2_1 = 2'h1 == hpOffset ? hpWriteWord_2 : hpFetchLine_2_1; // @[DCache.scala 196:37 DCache.scala 196:37 DCache.scala 195:27]
+  wire [31:0] hpWriteLine_2_2 = 2'h2 == hpOffset ? hpWriteWord_2 : hpFetchLine_2_2; // @[DCache.scala 196:37 DCache.scala 196:37 DCache.scala 195:27]
+  wire [31:0] hpWriteLine_2_3 = 2'h3 == hpOffset ? hpWriteWord_2 : hpFetchLine_2_3; // @[DCache.scala 196:37 DCache.scala 196:37 DCache.scala 195:27]
+  wire [31:0] _T_35_0 = meta_0_io_hit ? hpFetchLine_0_0 : hpFetchLine_1_0; // @[DCache.scala 200:29]
+  wire [31:0] _T_35_1 = meta_0_io_hit ? hpFetchLine_0_1 : hpFetchLine_1_1; // @[DCache.scala 200:29]
+  wire [31:0] _T_35_2 = meta_0_io_hit ? hpFetchLine_0_2 : hpFetchLine_1_2; // @[DCache.scala 200:29]
+  wire [31:0] _T_35_3 = meta_0_io_hit ? hpFetchLine_0_3 : hpFetchLine_1_3; // @[DCache.scala 200:29]
+  wire [31:0] _T_38_0 = hitBuf ? hpFetchLine_2_0 : 32'h0; // @[DCache.scala 202:86]
+  wire [31:0] _T_38_1 = hitBuf ? hpFetchLine_2_1 : 32'h0; // @[DCache.scala 202:86]
+  wire [31:0] _T_38_2 = hitBuf ? hpFetchLine_2_2 : 32'h0; // @[DCache.scala 202:86]
+  wire [31:0] _T_38_3 = hitBuf ? hpFetchLine_2_3 : 32'h0; // @[DCache.scala 202:86]
+  wire [31:0] rdata_0 = hasHit ? _T_35_0 : _T_38_0; // @[DCache.scala 202:21]
+  wire [31:0] rdata_1 = hasHit ? _T_35_1 : _T_38_1; // @[DCache.scala 202:21]
+  wire [31:0] rdata_2 = hasHit ? _T_35_2 : _T_38_2; // @[DCache.scala 202:21]
+  wire [31:0] rdata_3 = hasHit ? _T_35_3 : _T_38_3; // @[DCache.scala 202:21]
+  wire [31:0] mpRefillLine_0 = io_bar_resp_bits_rdata[31:0]; // @[DCache.scala 247:56]
+  wire [31:0] mpRefillLine_1 = io_bar_resp_bits_rdata[63:32]; // @[DCache.scala 247:56]
+  wire [31:0] _GEN_32 = 2'h1 == mpOffset[1:0] ? mpRefillLine_1 : mpRefillLine_0; // @[DCache.scala 204:67 DCache.scala 204:67]
+  wire [31:0] mpRefillLine_2 = io_bar_resp_bits_rdata[95:64]; // @[DCache.scala 247:56]
+  wire [31:0] _GEN_33 = 2'h2 == mpOffset[1:0] ? mpRefillLine_2 : _GEN_32; // @[DCache.scala 204:67 DCache.scala 204:67]
+  wire [31:0] mpRefillLine_3 = io_bar_resp_bits_rdata[127:96]; // @[DCache.scala 247:56]
+  wire [31:0] _GEN_34 = 2'h3 == mpOffset[1:0] ? mpRefillLine_3 : _GEN_33; // @[DCache.scala 204:67 DCache.scala 204:67]
+  wire [31:0] _io_cpu_resp_bits_rdata_T_1 = _GEN_34 & mpMask; // @[DCache.scala 204:67]
+  wire [31:0] _GEN_36 = 2'h1 == hpOffset ? rdata_1 : rdata_0; // @[DCache.scala 204:93 DCache.scala 204:93]
+  wire [31:0] _GEN_37 = 2'h2 == hpOffset ? rdata_2 : _GEN_36; // @[DCache.scala 204:93 DCache.scala 204:93]
+  wire [31:0] _GEN_38 = 2'h3 == hpOffset ? rdata_3 : _GEN_37; // @[DCache.scala 204:93 DCache.scala 204:93]
+  wire [31:0] _io_cpu_resp_bits_rdata_T_2 = _GEN_38 & hpMask; // @[DCache.scala 204:93]
+  wire  _data_0_io_web_T_4 = hpValid & meta_0_io_hit & hpReq_wen; // @[DCache.scala 208:109]
+  wire [31:0] _mpWriteWord_T = mpMask & mpReq_wdata; // @[DCache.scala 268:32]
+  wire [62:0] _GEN_83 = {{31'd0}, _mpWriteWord_T}; // @[DCache.scala 268:47]
+  wire [62:0] _mpWriteWord_T_1 = _GEN_83 << mpShift; // @[DCache.scala 268:47]
+  wire [62:0] _GEN_84 = {{31'd0}, mpMask}; // @[DCache.scala 268:81]
+  wire [62:0] _mpWriteWord_T_2 = _GEN_84 << mpShift; // @[DCache.scala 268:81]
+  wire [62:0] _mpWriteWord_T_3 = ~_mpWriteWord_T_2; // @[DCache.scala 268:72]
+  wire [62:0] _GEN_85 = {{31'd0}, _GEN_34}; // @[DCache.scala 268:103]
+  wire [62:0] _mpWriteWord_T_5 = _mpWriteWord_T_3 & _GEN_85; // @[DCache.scala 268:103]
+  wire [62:0] mpWriteWord = _mpWriteWord_T_1 | _mpWriteWord_T_5; // @[DCache.scala 268:68]
+  wire [31:0] mpWriteLine_1 = 2'h1 == mpOffset[1:0] ? mpWriteWord[31:0] : mpRefillLine_1; // @[DCache.scala 270:27 DCache.scala 270:27 DCache.scala 269:17]
+  wire [31:0] mpWriteLine_0 = 2'h0 == mpOffset[1:0] ? mpWriteWord[31:0] : mpRefillLine_0; // @[DCache.scala 270:27 DCache.scala 270:27 DCache.scala 269:17]
+  wire [31:0] mpWriteLine_3 = 2'h3 == mpOffset[1:0] ? mpWriteWord[31:0] : mpRefillLine_3; // @[DCache.scala 270:27 DCache.scala 270:27 DCache.scala 269:17]
+  wire [31:0] mpWriteLine_2 = 2'h2 == mpOffset[1:0] ? mpWriteWord[31:0] : mpRefillLine_2; // @[DCache.scala 270:27 DCache.scala 270:27 DCache.scala 269:17]
+  wire [127:0] _data_0_io_dinb_T = {mpWriteLine_3,mpWriteLine_2,mpWriteLine_1,mpWriteLine_0}; // @[DCache.scala 210:75]
+  wire [127:0] _data_0_io_dinb_T_1 = mpReq_wen ? _data_0_io_dinb_T : io_bar_resp_bits_rdata; // @[DCache.scala 210:45]
+  wire [127:0] _data_0_io_dinb_T_2 = {hpWriteLine_0_3,hpWriteLine_0_2,hpWriteLine_0_1,hpWriteLine_0_0}; // @[DCache.scala 210:134]
+  wire  _data_1_io_web_T_4 = hpValid & meta_1_io_hit & hpReq_wen; // @[DCache.scala 208:109]
+  wire [127:0] _data_1_io_dinb_T_2 = {hpWriteLine_1_3,hpWriteLine_1_2,hpWriteLine_1_1,hpWriteLine_1_0}; // @[DCache.scala 210:134]
+  wire  _meta_0_io_update_T_2 = mpValid ? 1'h0 : _data_0_io_web_T_4; // @[DCache.scala 217:33]
+  wire  _meta_1_io_update_T_2 = mpValid ? 1'h0 : _data_1_io_web_T_4; // @[DCache.scala 217:33]
+  wire  _dataBuf_io_web_T_1 = hpValid & hitBuf & hpReq_wen; // @[DCache.scala 221:74]
+  wire [127:0] _dataBuf_io_dinb_T = {hpWriteLine_2_3,hpWriteLine_2_2,hpWriteLine_2_1,hpWriteLine_2_0}; // @[DCache.scala 223:102]
+  wire [31:0] mpRefillBufAddr = mpRefillAddr + 32'h10; // @[DCache.scala 241:41]
+  wire [31:0] _io_bar_req_bits_addr_T_1 = _T_46 ? mpDirtyAddr : mpRefillAddr; // @[DCache.scala 233:46]
+  wire  _io_bar_req_bits_wen_T_1 = mpTag[0] ? meta_1_io_dirty : meta_0_io_dirty; // @[DCache.scala 236:46]
+  wire [31:0] _io_bar_req_bits_addrBuf_T_1 = _T_46 ? mpDirtyBufAddr : mpRefillBufAddr; // @[DCache.scala 242:53]
+  wire  _mpState_T_1 = hpTag[0] ? meta_1_io_dirty : meta_0_io_dirty; // @[DCache.scala 259:31]
+  wire  _mpState_T_2 = _mpState_T_1 ? 1'h0 : 1'h1; // @[DCache.scala 259:27]
+  wire [19:0] mpDirtyAddr_hi_hi = hpTag[0] ? meta_1_io_tagFetch : meta_0_io_tagFetch; // @[DCache.scala 260:31]
+  wire [31:0] _mpDirtyAddr_T_1 = {mpDirtyAddr_hi_hi,hpIndex,4'h0}; // @[Cat.scala 30:58]
+  wire [127:0] _mpDirtyData_T_1 = {hpFetchLine_1_3,hpFetchLine_1_2,hpFetchLine_1_1,hpFetchLine_1_0}; // @[DCache.scala 261:61]
+  wire [127:0] _mpDirtyData_T_2 = {hpFetchLine_0_3,hpFetchLine_0_2,hpFetchLine_0_1,hpFetchLine_0_0}; // @[DCache.scala 262:61]
+  wire [127:0] _mpDirtyBufData_T = {hpFetchLine_2_3,hpFetchLine_2_2,hpFetchLine_2_1,hpFetchLine_2_0}; // @[DCache.scala 265:57]
+  wire  _GEN_49 = _hpReq_T ? _mpState_T_2 : mpState; // @[DCache.scala 250:21 DCache.scala 259:21 DCache.scala 138:26]
+  wire  _GEN_61 = hpTag[0] | _meta_1_io_update_T_2; // @[DCache.scala 278:33 DCache.scala 279:39 DCache.scala 217:27]
+  wire  _GEN_62 = hpTag[0] ? _meta_0_io_update_T_2 : 1'h1; // @[DCache.scala 278:33 DCache.scala 217:27 DCache.scala 281:39]
+  wire  _GEN_63 = mpState ? _GEN_61 : _meta_1_io_update_T_2; // @[Conditional.scala 39:67 DCache.scala 217:27]
+  wire  _GEN_64 = mpState ? _GEN_62 : _meta_0_io_update_T_2; // @[Conditional.scala 39:67 DCache.scala 217:27]
+  wire  _GEN_67 = _T_46 ? _meta_1_io_update_T_2 : _GEN_63; // @[Conditional.scala 40:58 DCache.scala 217:27]
+  wire  _GEN_68 = _T_46 ? _meta_0_io_update_T_2 : _GEN_64; // @[Conditional.scala 40:58 DCache.scala 217:27]
+  DualPortBRAM data_0 ( // @[DCache.scala 81:48]
     .clock(data_0_clock),
     .reset(data_0_reset),
     .io_web(data_0_io_web),
@@ -6685,7 +7026,7 @@ module DCache(
     .io_dinb(data_0_io_dinb),
     .io_douta(data_0_io_douta)
   );
-  DualPortBRAM data_1 ( // @[DCache.scala 54:48]
+  DualPortBRAM data_1 ( // @[DCache.scala 81:48]
     .clock(data_1_clock),
     .reset(data_1_reset),
     .io_web(data_1_io_web),
@@ -6694,7 +7035,7 @@ module DCache(
     .io_dinb(data_1_io_dinb),
     .io_douta(data_1_io_douta)
   );
-  MetaDataBRAM meta_0 ( // @[DCache.scala 55:48]
+  MetaDataBRAM meta_0 ( // @[DCache.scala 82:48]
     .clock(meta_0_clock),
     .reset(meta_0_reset),
     .io_indexFetch(meta_0_io_indexFetch),
@@ -6706,7 +7047,7 @@ module DCache(
     .io_tagFetch(meta_0_io_tagFetch),
     .io_dirty(meta_0_io_dirty)
   );
-  MetaDataBRAM meta_1 ( // @[DCache.scala 55:48]
+  MetaDataBRAM meta_1 ( // @[DCache.scala 82:48]
     .clock(meta_1_clock),
     .reset(meta_1_reset),
     .io_indexFetch(meta_1_io_indexFetch),
@@ -6718,60 +7059,91 @@ module DCache(
     .io_tagFetch(meta_1_io_tagFetch),
     .io_dirty(meta_1_io_dirty)
   );
-  assign io_cpu_req_ready = io_cpu_resp_valid; // @[DCache.scala 175:22]
-  assign io_cpu_resp_valid = hpRespValid | mpRespValid; // @[DCache.scala 141:43]
-  assign io_cpu_resp_bits_rdata = mpValid ? _io_cpu_resp_bits_rdata_T_1 : _io_cpu_resp_bits_rdata_T_2; // @[DCache.scala 147:34]
-  assign io_bar_req_valid = mpValid & (mpValid & ~io_bar_resp_valid); // @[DCache.scala 173:28]
-  assign io_bar_req_bits_addr = mpValid ? _io_bar_req_bits_addr_T_1 : io_cpu_req_bits_addr; // @[DCache.scala 168:33]
-  assign io_bar_req_bits_wen = mpValid & (_io_bar_req_bits_wen_T_1 & _T_31); // @[DCache.scala 171:33]
-  assign io_bar_req_bits_wdata = mpValid ? mpDirtyData : {{96'd0}, io_cpu_req_bits_wdata}; // @[DCache.scala 169:33]
-  assign io_bar_req_bits_mtype = io_cpu_req_bits_mtype; // @[DCache.scala 170:27]
-  assign io_bar_resp_ready = 1'h1; // @[DCache.scala 107:23]
-  assign io_dbg_hit = meta_0_io_hit | meta_1_io_hit; // @[DCache.scala 109:31]
-  assign io_dbg_hitWay = _hpRespValid_T & meta_1_io_hit; // @[DCache.scala 114:33]
-  assign io_dbg_replaceWay = hpTag[0]; // @[DCache.scala 115:31]
+  DualPortBRAM_4 dataBuf ( // @[DCache.scala 83:39]
+    .clock(dataBuf_clock),
+    .reset(dataBuf_reset),
+    .io_web(dataBuf_io_web),
+    .io_dinb(dataBuf_io_dinb),
+    .io_douta(dataBuf_io_douta)
+  );
+  MetaBufBRAM metaBuf ( // @[DCache.scala 84:39]
+    .clock(metaBuf_clock),
+    .reset(metaBuf_reset),
+    .io_indexUpdate(metaBuf_io_indexUpdate),
+    .io_tagUpdate(metaBuf_io_tagUpdate),
+    .io_update(metaBuf_io_update),
+    .io_write(metaBuf_io_write),
+    .io_hit(metaBuf_io_hit),
+    .io_dirty(metaBuf_io_dirty)
+  );
+  assign io_cpu_req_ready = io_cpu_resp_valid; // @[DCache.scala 248:22]
+  assign io_cpu_resp_valid = hpRespValid | mpRespValid; // @[DCache.scala 205:43]
+  assign io_cpu_resp_bits_rdata = mpValid ? _io_cpu_resp_bits_rdata_T_1 : _io_cpu_resp_bits_rdata_T_2; // @[DCache.scala 204:34]
+  assign io_bar_req_valid = mpValid & (mpValid & ~io_bar_resp_valid); // @[DCache.scala 237:28]
+  assign io_bar_req_bits_addr = mpValid ? _io_bar_req_bits_addr_T_1 : io_cpu_req_bits_addr; // @[DCache.scala 233:33]
+  assign io_bar_req_bits_wen = mpValid & (_io_bar_req_bits_wen_T_1 & _T_46); // @[DCache.scala 236:33]
+  assign io_bar_req_bits_wdata = mpValid ? mpDirtyData : {{96'd0}, io_cpu_req_bits_wdata}; // @[DCache.scala 234:33]
+  assign io_bar_req_bits_mtype = io_cpu_req_bits_mtype; // @[DCache.scala 235:27]
+  assign io_bar_req_bits_wenBuf = mpValid & (metaBuf_io_dirty & _T_46); // @[DCache.scala 244:40]
+  assign io_bar_req_bits_addrBuf = mpValid ? _io_bar_req_bits_addrBuf_T_1 : io_cpu_req_bits_addr; // @[DCache.scala 242:40]
+  assign io_bar_req_bits_wdataBuf = mpValid ? mpDirtyBufData : 128'h0; // @[DCache.scala 243:40]
+  assign io_bar_resp_ready = 1'h1; // @[DCache.scala 153:23]
+  assign io_dbg_hit = meta_0_io_hit | meta_1_io_hit; // @[DCache.scala 156:31]
+  assign io_dbg_hitBuf = metaBuf_io_hit; // @[DCache.scala 103:41 DCache.scala 173:16]
+  assign io_dbg_hitWay = hasHit & meta_1_io_hit; // @[DCache.scala 163:33]
+  assign io_dbg_replaceWay = hpTag[0]; // @[DCache.scala 164:31]
   assign data_0_clock = clock;
   assign data_0_reset = reset;
-  assign data_0_io_web = mpValid ? ~mpTag[0] & mpWriteCache : hpValid & meta_0_io_hit & hpReq_wen; // @[DCache.scala 150:30]
-  assign data_0_io_addra = io_cpu_req_bits_addr[11:4]; // @[DCache.scala 65:40]
-  assign data_0_io_addrb = mpValid ? mpIndex : hpIndex; // @[DCache.scala 151:32]
-  assign data_0_io_dinb = mpValid ? _data_0_io_dinb_T_1 : _data_0_io_dinb_T_2; // @[DCache.scala 152:31]
+  assign data_0_io_web = mpValid ? ~mpTag[0] & mpWriteCache : hpValid & meta_0_io_hit & hpReq_wen; // @[DCache.scala 208:32]
+  assign data_0_io_addra = io_cpu_req_bits_addr[11:4]; // @[DCache.scala 98:40]
+  assign data_0_io_addrb = mpValid ? mpIndex : hpIndex; // @[DCache.scala 209:32]
+  assign data_0_io_dinb = mpValid ? _data_0_io_dinb_T_1 : _data_0_io_dinb_T_2; // @[DCache.scala 210:32]
   assign data_1_clock = clock;
   assign data_1_reset = reset;
-  assign data_1_io_web = mpValid ? mpTag[0] & mpWriteCache : hpValid & meta_1_io_hit & hpReq_wen; // @[DCache.scala 150:30]
-  assign data_1_io_addra = io_cpu_req_bits_addr[11:4]; // @[DCache.scala 65:40]
-  assign data_1_io_addrb = mpValid ? mpIndex : hpIndex; // @[DCache.scala 151:32]
-  assign data_1_io_dinb = mpValid ? _data_0_io_dinb_T_1 : _data_1_io_dinb_T_2; // @[DCache.scala 152:31]
+  assign data_1_io_web = mpValid ? mpTag[0] & mpWriteCache : hpValid & meta_1_io_hit & hpReq_wen; // @[DCache.scala 208:32]
+  assign data_1_io_addra = io_cpu_req_bits_addr[11:4]; // @[DCache.scala 98:40]
+  assign data_1_io_addrb = mpValid ? mpIndex : hpIndex; // @[DCache.scala 209:32]
+  assign data_1_io_dinb = mpValid ? _data_0_io_dinb_T_1 : _data_1_io_dinb_T_2; // @[DCache.scala 210:32]
   assign meta_0_clock = clock;
   assign meta_0_reset = reset;
-  assign meta_0_io_indexFetch = io_cpu_req_bits_addr[11:4]; // @[DCache.scala 65:40]
-  assign meta_0_io_indexUpdate = mpValid ? mpIndex : hpIndex; // @[DCache.scala 156:38]
-  assign meta_0_io_tagUpdate = mpValid ? mpTag : hpTag; // @[DCache.scala 157:38]
-  assign meta_0_io_update = mpValid ? _GEN_62 : _meta_0_io_update_T_2; // @[DCache.scala 200:20 DCache.scala 159:27]
-  assign meta_0_io_write = mpValid ? mpReq_wen : hpReq_wen; // @[DCache.scala 158:33]
+  assign meta_0_io_indexFetch = io_cpu_req_bits_addr[11:4]; // @[DCache.scala 98:40]
+  assign meta_0_io_indexUpdate = mpValid ? mpIndex : hpIndex; // @[DCache.scala 214:38]
+  assign meta_0_io_tagUpdate = mpValid ? mpTag : hpTag; // @[DCache.scala 215:38]
+  assign meta_0_io_update = mpValid ? _GEN_68 : _meta_0_io_update_T_2; // @[DCache.scala 272:20 DCache.scala 217:27]
+  assign meta_0_io_write = mpValid ? mpReq_wen : hpReq_wen; // @[DCache.scala 216:33]
   assign meta_1_clock = clock;
   assign meta_1_reset = reset;
-  assign meta_1_io_indexFetch = io_cpu_req_bits_addr[11:4]; // @[DCache.scala 65:40]
-  assign meta_1_io_indexUpdate = mpValid ? mpIndex : hpIndex; // @[DCache.scala 156:38]
-  assign meta_1_io_tagUpdate = mpValid ? mpTag : hpTag; // @[DCache.scala 157:38]
-  assign meta_1_io_update = mpValid ? _GEN_61 : _meta_1_io_update_T_2; // @[DCache.scala 200:20 DCache.scala 159:27]
-  assign meta_1_io_write = mpValid ? mpReq_wen : hpReq_wen; // @[DCache.scala 158:33]
+  assign meta_1_io_indexFetch = io_cpu_req_bits_addr[11:4]; // @[DCache.scala 98:40]
+  assign meta_1_io_indexUpdate = mpValid ? mpIndex : hpIndex; // @[DCache.scala 214:38]
+  assign meta_1_io_tagUpdate = mpValid ? mpTag : hpTag; // @[DCache.scala 215:38]
+  assign meta_1_io_update = mpValid ? _GEN_67 : _meta_1_io_update_T_2; // @[DCache.scala 272:20 DCache.scala 217:27]
+  assign meta_1_io_write = mpValid ? mpReq_wen : hpReq_wen; // @[DCache.scala 216:33]
+  assign dataBuf_clock = clock;
+  assign dataBuf_reset = reset;
+  assign dataBuf_io_web = mpValid ? mpWriteCache : hpValid & hitBuf & hpReq_wen; // @[DCache.scala 221:32]
+  assign dataBuf_io_dinb = mpValid ? io_bar_resp_bits_rdataBuf : _dataBuf_io_dinb_T; // @[DCache.scala 223:32]
+  assign metaBuf_clock = clock;
+  assign metaBuf_reset = reset;
+  assign metaBuf_io_indexUpdate = mpValid ? mpRefillBufAddr[11:4] : hpIndex; // @[DCache.scala 224:38]
+  assign metaBuf_io_tagUpdate = mpValid ? mpRefillBufAddr[31:12] : hpTag; // @[DCache.scala 225:38]
+  assign metaBuf_io_update = mpValid ? mpState : _dataBuf_io_web_T_1; // @[DCache.scala 227:33]
+  assign metaBuf_io_write = mpValid ? mpReq_wen : hpReq_wen; // @[DCache.scala 226:33]
   always @(posedge clock) begin
-    if (reset) begin // @[DCache.scala 85:26]
-      mpValid <= 1'h0; // @[DCache.scala 85:26]
-    end else if (_hpReq_T) begin // @[DCache.scala 177:21]
-      mpValid <= _hpValid_T_1; // @[DCache.scala 178:18]
+    if (reset) begin // @[DCache.scala 119:26]
+      mpValid <= 1'h0; // @[DCache.scala 119:26]
+    end else if (_hpReq_T) begin // @[DCache.scala 250:21]
+      mpValid <= _hpValid_T_7; // @[DCache.scala 264:21]
     end
-    if (reset) begin // @[DCache.scala 164:26]
-      mpState <= 1'h0; // @[DCache.scala 164:26]
-    end else if (mpValid) begin // @[DCache.scala 200:20]
-      if (_T_31) begin // @[Conditional.scala 40:58]
-        mpState <= io_bar_resp_valid | mpState; // @[DCache.scala 203:25]
+    if (reset) begin // @[DCache.scala 138:26]
+      mpState <= 1'h0; // @[DCache.scala 138:26]
+    end else if (mpValid) begin // @[DCache.scala 272:20]
+      if (_T_46) begin // @[Conditional.scala 40:58]
+        mpState <= io_bar_resp_valid | mpState; // @[DCache.scala 275:25]
       end else begin
-        mpState <= _GEN_44;
+        mpState <= _GEN_49;
       end
     end else begin
-      mpState <= _GEN_44;
+      mpState <= _GEN_49;
     end
     if (_hpReq_T) begin // @[Reg.scala 16:19]
       hpReq_addr <= io_cpu_req_bits_addr; // @[Reg.scala 16:23]
@@ -6794,53 +7166,53 @@ module DCache(
     if (_hpReq_T) begin // @[Reg.scala 16:19]
       hpOffset <= arOffset; // @[Reg.scala 16:23]
     end
-    if (reset) begin // @[DCache.scala 79:30]
-      hpValid <= 1'h0; // @[DCache.scala 79:30]
-    end else if (hpValid & ~_hpRespValid_T | mpStall) begin // @[DCache.scala 111:19]
+    if (reset) begin // @[DCache.scala 113:30]
+      hpValid <= 1'h0; // @[DCache.scala 113:30]
+    end else if (_hpValid_T_1 & ~hitBuf | mpStall) begin // @[DCache.scala 160:23]
       hpValid <= 1'h0;
     end else begin
       hpValid <= io_cpu_req_valid;
     end
-    if (reset) begin // @[DCache.scala 83:26]
-      mpReq_wen <= 1'h0; // @[DCache.scala 83:26]
-    end else if (_hpReq_T) begin // @[DCache.scala 177:21]
-      mpReq_wen <= hpReq_wen; // @[DCache.scala 179:18]
+    if (reset) begin // @[DCache.scala 117:26]
+      mpReq_wen <= 1'h0; // @[DCache.scala 117:26]
+    end else if (_hpReq_T) begin // @[DCache.scala 250:21]
+      mpReq_wen <= hpReq_wen; // @[DCache.scala 252:18]
     end
-    if (reset) begin // @[DCache.scala 83:26]
-      mpReq_wdata <= 32'h0; // @[DCache.scala 83:26]
-    end else if (_hpReq_T) begin // @[DCache.scala 177:21]
-      mpReq_wdata <= hpReq_wdata; // @[DCache.scala 179:18]
+    if (reset) begin // @[DCache.scala 117:26]
+      mpReq_wdata <= 32'h0; // @[DCache.scala 117:26]
+    end else if (_hpReq_T) begin // @[DCache.scala 250:21]
+      mpReq_wdata <= hpReq_wdata; // @[DCache.scala 252:18]
     end
-    if (_hpReq_T) begin // @[DCache.scala 177:21]
-      if (hpTag[0]) begin // @[DCache.scala 186:25]
-        mpDirtyAddr <= _mpDirtyAddr_T; // @[DCache.scala 188:25]
+    if (_hpReq_T) begin // @[DCache.scala 250:21]
+      mpDirtyAddr <= _mpDirtyAddr_T_1; // @[DCache.scala 260:21]
+    end
+    if (_hpReq_T) begin // @[DCache.scala 250:21]
+      if (hpTag[0]) begin // @[DCache.scala 261:27]
+        mpDirtyData <= _mpDirtyData_T_1;
       end else begin
-        mpDirtyAddr <= _mpDirtyAddr_T_1; // @[DCache.scala 192:25]
+        mpDirtyData <= _mpDirtyData_T_2;
       end
     end
-    if (_hpReq_T) begin // @[DCache.scala 177:21]
-      if (hpTag[0]) begin // @[DCache.scala 186:25]
-        mpDirtyData <= _mpDirtyData_T; // @[DCache.scala 189:25]
-      end else begin
-        mpDirtyData <= _mpDirtyData_T_1; // @[DCache.scala 193:25]
-      end
+    mpDirtyBufAddr <= mpDirtyAddr + 32'h10; // @[DCache.scala 240:41]
+    if (_hpReq_T) begin // @[DCache.scala 250:21]
+      mpDirtyBufData <= _mpDirtyBufData_T; // @[DCache.scala 265:28]
     end
-    if (reset) begin // @[DCache.scala 93:27]
-      mpOffset <= 4'h0; // @[DCache.scala 93:27]
-    end else if (_hpReq_T) begin // @[DCache.scala 177:21]
-      mpOffset <= {{2'd0}, hpOffset}; // @[DCache.scala 182:18]
+    if (reset) begin // @[DCache.scala 129:27]
+      mpOffset <= 4'h0; // @[DCache.scala 129:27]
+    end else if (_hpReq_T) begin // @[DCache.scala 250:21]
+      mpOffset <= {{2'd0}, hpOffset}; // @[DCache.scala 255:18]
     end
-    if (reset) begin // @[DCache.scala 94:27]
-      mpIndex <= 8'h0; // @[DCache.scala 94:27]
-    end else if (_hpReq_T) begin // @[DCache.scala 177:21]
-      mpIndex <= hpIndex; // @[DCache.scala 180:18]
+    if (reset) begin // @[DCache.scala 130:27]
+      mpIndex <= 8'h0; // @[DCache.scala 130:27]
+    end else if (_hpReq_T) begin // @[DCache.scala 250:21]
+      mpIndex <= hpIndex; // @[DCache.scala 253:18]
     end
-    if (reset) begin // @[DCache.scala 95:27]
-      mpTag <= 20'h0; // @[DCache.scala 95:27]
-    end else if (_hpReq_T) begin // @[DCache.scala 177:21]
-      mpTag <= hpTag; // @[DCache.scala 181:18]
+    if (reset) begin // @[DCache.scala 131:27]
+      mpTag <= 20'h0; // @[DCache.scala 131:27]
+    end else if (_hpReq_T) begin // @[DCache.scala 250:21]
+      mpTag <= hpTag; // @[DCache.scala 254:18]
     end
-    if (_hpReq_T) begin // @[DCache.scala 177:21]
+    if (_hpReq_T) begin // @[DCache.scala 250:21]
       if (2'h1 == hpReq_mtype) begin // @[Mux.scala 80:57]
         mpMask <= 32'hffff;
       end else if (2'h0 == hpReq_mtype) begin // @[Mux.scala 80:57]
@@ -6849,19 +7221,24 @@ module DCache(
         mpMask <= 32'hffffffff;
       end
     end
-    if (_hpReq_T) begin // @[DCache.scala 177:21]
-      mpShift <= hpShift; // @[DCache.scala 184:18]
+    if (_hpReq_T) begin // @[DCache.scala 250:21]
+      mpShift <= hpShift; // @[DCache.scala 257:18]
     end
-    REG <= data_0_io_web & data_0_io_addra == data_0_io_addrb; // @[DCache.scala 118:54]
-    REG_1_0 <= _WIRE_1[31:0]; // @[DCache.scala 119:65]
-    REG_1_1 <= _WIRE_1[63:32]; // @[DCache.scala 119:65]
-    REG_1_2 <= _WIRE_1[95:64]; // @[DCache.scala 119:65]
-    REG_1_3 <= _WIRE_1[127:96]; // @[DCache.scala 119:65]
-    REG_2 <= data_1_io_web & data_1_io_addra == data_1_io_addrb; // @[DCache.scala 118:54]
-    REG_3_0 <= _WIRE_5[31:0]; // @[DCache.scala 119:65]
-    REG_3_1 <= _WIRE_5[63:32]; // @[DCache.scala 119:65]
-    REG_3_2 <= _WIRE_5[95:64]; // @[DCache.scala 119:65]
-    REG_3_3 <= _WIRE_5[127:96]; // @[DCache.scala 119:65]
+    REG <= data_0_io_web & data_0_io_addra == data_0_io_addrb; // @[DCache.scala 167:54]
+    REG_1_0 <= _WIRE_1[31:0]; // @[DCache.scala 168:64]
+    REG_1_1 <= _WIRE_1[63:32]; // @[DCache.scala 168:64]
+    REG_1_2 <= _WIRE_1[95:64]; // @[DCache.scala 168:64]
+    REG_1_3 <= _WIRE_1[127:96]; // @[DCache.scala 168:64]
+    REG_2 <= data_1_io_web & data_1_io_addra == data_1_io_addrb; // @[DCache.scala 167:54]
+    REG_3_0 <= _WIRE_5[31:0]; // @[DCache.scala 168:64]
+    REG_3_1 <= _WIRE_5[63:32]; // @[DCache.scala 168:64]
+    REG_3_2 <= _WIRE_5[95:64]; // @[DCache.scala 168:64]
+    REG_3_3 <= _WIRE_5[127:96]; // @[DCache.scala 168:64]
+    REG_4 <= dataBuf_io_web; // @[DCache.scala 175:57]
+    REG_5_0 <= _T_24[31:0]; // @[DCache.scala 176:87]
+    REG_5_1 <= _T_24[63:32]; // @[DCache.scala 176:87]
+    REG_5_2 <= _T_24[95:64]; // @[DCache.scala 176:87]
+    REG_5_3 <= _T_24[127:96]; // @[DCache.scala 176:87]
   end
 // Register and memory initialization
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
@@ -6928,35 +7305,49 @@ initial begin
   _RAND_13 = {4{`RANDOM}};
   mpDirtyData = _RAND_13[127:0];
   _RAND_14 = {1{`RANDOM}};
-  mpOffset = _RAND_14[3:0];
-  _RAND_15 = {1{`RANDOM}};
-  mpIndex = _RAND_15[7:0];
+  mpDirtyBufAddr = _RAND_14[31:0];
+  _RAND_15 = {4{`RANDOM}};
+  mpDirtyBufData = _RAND_15[127:0];
   _RAND_16 = {1{`RANDOM}};
-  mpTag = _RAND_16[19:0];
+  mpOffset = _RAND_16[3:0];
   _RAND_17 = {1{`RANDOM}};
-  mpMask = _RAND_17[31:0];
+  mpIndex = _RAND_17[7:0];
   _RAND_18 = {1{`RANDOM}};
-  mpShift = _RAND_18[4:0];
+  mpTag = _RAND_18[19:0];
   _RAND_19 = {1{`RANDOM}};
-  REG = _RAND_19[0:0];
+  mpMask = _RAND_19[31:0];
   _RAND_20 = {1{`RANDOM}};
-  REG_1_0 = _RAND_20[31:0];
+  mpShift = _RAND_20[4:0];
   _RAND_21 = {1{`RANDOM}};
-  REG_1_1 = _RAND_21[31:0];
+  REG = _RAND_21[0:0];
   _RAND_22 = {1{`RANDOM}};
-  REG_1_2 = _RAND_22[31:0];
+  REG_1_0 = _RAND_22[31:0];
   _RAND_23 = {1{`RANDOM}};
-  REG_1_3 = _RAND_23[31:0];
+  REG_1_1 = _RAND_23[31:0];
   _RAND_24 = {1{`RANDOM}};
-  REG_2 = _RAND_24[0:0];
+  REG_1_2 = _RAND_24[31:0];
   _RAND_25 = {1{`RANDOM}};
-  REG_3_0 = _RAND_25[31:0];
+  REG_1_3 = _RAND_25[31:0];
   _RAND_26 = {1{`RANDOM}};
-  REG_3_1 = _RAND_26[31:0];
+  REG_2 = _RAND_26[0:0];
   _RAND_27 = {1{`RANDOM}};
-  REG_3_2 = _RAND_27[31:0];
+  REG_3_0 = _RAND_27[31:0];
   _RAND_28 = {1{`RANDOM}};
-  REG_3_3 = _RAND_28[31:0];
+  REG_3_1 = _RAND_28[31:0];
+  _RAND_29 = {1{`RANDOM}};
+  REG_3_2 = _RAND_29[31:0];
+  _RAND_30 = {1{`RANDOM}};
+  REG_3_3 = _RAND_30[31:0];
+  _RAND_31 = {1{`RANDOM}};
+  REG_4 = _RAND_31[0:0];
+  _RAND_32 = {1{`RANDOM}};
+  REG_5_0 = _RAND_32[31:0];
+  _RAND_33 = {1{`RANDOM}};
+  REG_5_1 = _RAND_33[31:0];
+  _RAND_34 = {1{`RANDOM}};
+  REG_5_2 = _RAND_34[31:0];
+  _RAND_35 = {1{`RANDOM}};
+  REG_5_3 = _RAND_35[31:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

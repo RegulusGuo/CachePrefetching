@@ -17,6 +17,11 @@ class DmemIO extends Bundle with CacheConfig with MemAccessType {
     val dina  = Input(UInt(cachelineBits.W))
     val wea   = Input(Bool())
     val douta = Output(UInt(cachelineBits.W))
+
+    val addrb = Input(UInt(addrWidth.W))
+    val dinb  = Input(UInt(cachelineBits.W))
+    val web   = Input(Bool())
+    val doutb = Output(UInt(cachelineBits.W))
     val mtype = Input(UInt(MEMTYPE.W))
 }
 
@@ -37,10 +42,28 @@ class Test extends Module with CacheConfig with MemAccessType {
     val dmem   = Module(new RAM_B)
     dmem.io.clka  := clock
     dmem.io.mtype := dcache.io.bar.req.bits.mtype
-    dmem.io.wea   := dcache.io.bar.req.bits.wen
+    // dmem.io.wea   := dcache.io.bar.req.bits.wen
+    // dmem.io.addra := dcache.io.bar.req.bits.addr
+    // dmem.io.dina  := dcache.io.bar.req.bits.wdata
+    // dcache.io.bar.resp.bits.rdata := dmem.io.douta
+
+    // val dmem = Module(new DualPortBRAM(DATA_WIDTH = cachelineBits, 1 << 10))
+    // dmem.io.clk := clock
+    // dmem.io.rst := reset
+    dmem.io.wea   := false.B 
     dmem.io.addra := dcache.io.bar.req.bits.addr
-    dmem.io.dina  := dcache.io.bar.req.bits.wdata
-    dcache.io.bar.resp.bits.rdata := dmem.io.douta
+    dmem.io.dina  := 0.U
+    dmem.io.web   := dcache.io.bar.req.bits.wen
+    dmem.io.addrb := dcache.io.bar.req.bits.addr
+    dmem.io.dinb  := dcache.io.bar.req.bits.wdata
+    dcache.io.bar.resp.bits.rdata := dmem.io.doutb
+
+    if (prefetch) {
+        dmem.io.wea   := dcache.io.bar.req.bits.wenBuf
+        dmem.io.addra := dcache.io.bar.req.bits.addrBuf
+        dmem.io.dina  := dcache.io.bar.req.bits.wdataBuf
+        dcache.io.bar.resp.bits.rdataBuf := dmem.io.douta
+    }
 
     dcache.io.bar.req.ready  := true.B
     dcache.io.bar.resp.valid := true.B

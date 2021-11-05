@@ -28,10 +28,14 @@ class CacheMemReq extends Bundle with CacheConfig with MemAccessType {
     val wen   = Bool()
     val wdata = UInt(cachelineBits.W)
     val mtype = UInt(MEMTYPE.W)
+    val wenBuf   = if (prefetch) Bool() else null
+    val addrBuf  = if (prefetch) UInt(addrWidth.W) else null
+    val wdataBuf = if (prefetch) UInt(cachelineBits.W) else null
 }
 
 class CacheMemResp extends Bundle with CacheConfig with MemAccessType {
-    val rdata = UInt(cachelineBits.W)
+    val rdata    = UInt(cachelineBits.W)
+    val rdataBuf = if (prefetch) UInt(cachelineBits.W) else null
 }
 
 class CacheMemIO extends Bundle with CacheConfig with MemAccessType {
@@ -41,6 +45,7 @@ class CacheMemIO extends Bundle with CacheConfig with MemAccessType {
 
 class DebugIO extends Bundle with CacheConfig with MemAccessType {
     val hit        = Output(Bool())
+    val hitBuf     = if (prefetch) Output(Bool()) else null
     val hitWay     = Output(UInt(1.W))
     val replaceWay = Output(UInt(1.W))
 }

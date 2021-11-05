@@ -12,6 +12,7 @@ trait CacheConfig {
     val offsetBits    = 4
     val indexBits     = 8
     val tagBits       = addrWidth - offsetBits - indexBits
+    val prefetch      = true
 }
 
 trait MemAccessType {
