@@ -34,3 +34,13 @@ You can also turn off `prefetch` by set:
 val prefetch = false
 ```
 in CacheConfig.scala
+
+Generate Verilog:
+```
+cd chisel
+make
+```
+P.S. `make` generates both Test.v and DCache.v, Test.v is for simulation; if you only need DCache.v, please run:
+```
+make cache
+```
