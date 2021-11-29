@@ -60,6 +60,7 @@ class DCache extends Module with CacheConfig with MemAccessType {
     }
     
     val byteOffset = log2Ceil(dataWidth >> 3)
+    val recent = RegInit(VecInit(Seq.fill(nline)(1.U(1.W))))
     //----------accept req----------
     val arOffset = io.cpu.req.bits.addr(offsetBits - 1, offsetBits - log2Ceil(cachelineBits / dataWidth))
     val arIndex  = io.cpu.req.bits.addr(indexBits + offsetBits - 1, offsetBits)
@@ -109,10 +110,10 @@ class DCache extends Module with CacheConfig with MemAccessType {
     hasHit  := meta(0).io.hit || meta(1).io.hit // TODO: not general, just temporary
     hpStall := mpStall
     hpValid := Mux((hpValid && !hasHit) || mpStall, false.B, io.cpu.req.valid)
-    // val hitWay = Mux(hasHit && meta(1).io.hit, 1.U, 0.U)
+    val hitWay = Mux(hasHit && meta(1).io.hit, 1.U, 0.U)
     io.dbg.hit    := hasHit
-    io.dbg.hitWay := Mux(hasHit && meta(1).io.hit, 1.U, 0.U)
-    io.dbg.replaceWay := hpTag(0)
+    io.dbg.hitWay := hitWay
+    io.dbg.replaceWay := ~recent(mpIndex)
 
     for (i <- 0 until nway) {
         hpFetchLine(i) := Mux(RegNext(data(i).io.web && data(i).io.addra === data(i).io.addrb),
@@ -147,7 +148,7 @@ class DCache extends Module with CacheConfig with MemAccessType {
     io.cpu.resp.bits.rdata := Mux(mpValid, mpRefillLine(mpOffset) & mpMask, rdata(hpOffset) & hpMask).asTypeOf(chiselTypeOf(io.cpu.resp.bits.rdata))
  
     for (i <- 0 until nway) {
-        data(i).io.web := Mux(mpValid, i.U === mpTag(0).asUInt && mpWriteCache, hpValid && meta(i).io.hit && hpReq.wen)
+        data(i).io.web := Mux(mpValid, i.U === ~recent(mpIndex) && mpWriteCache, hpValid && meta(i).io.hit && hpReq.wen)
         data(i).io.addrb := Mux(mpValid, mpIndex, hpIndex)
         data(i).io.dinb := Mux(mpValid, Mux(mpReq.wen, mpWriteLine.asUInt(), io.bar.resp.bits.rdata.asUInt()), hpWriteLine(i).asUInt())
     }
@@ -157,6 +158,15 @@ class DCache extends Module with CacheConfig with MemAccessType {
         meta(i).io.tagUpdate   := Mux(mpValid, mpTag, hpTag)
         meta(i).io.write  := Mux(mpValid, mpReq.wen, hpReq.wen)
         meta(i).io.update := Mux(mpValid, false.B, hpValid && meta(i).io.hit && hpReq.wen)
+    }
+
+    // recent(hpIndex) := Mux(hasHit, hitWay, ~recent(hpIndex))
+    when (io.cpu.resp.valid) {
+        when (mpValid) {
+            recent(mpIndex) := ~recent(mpIndex)
+        }.otherwise {
+            recent(hpIndex) := hitWay
+        }
     }
     
     // miss process
@@ -168,7 +178,7 @@ class DCache extends Module with CacheConfig with MemAccessType {
     io.bar.req.bits.addr  := Mux(mpValid, Mux(mpState === mpWriteBack, mpDirtyAddr, mpRefillAddr), io.cpu.req.bits.addr)
     io.bar.req.bits.wdata := Mux(mpValid, mpDirtyData, io.cpu.req.bits.wdata)
     io.bar.req.bits.mtype := io.cpu.req.bits.mtype
-    io.bar.req.bits.wen   := Mux(mpValid, Mux(mpTag(0), meta(1).io.dirty, meta(0).io.dirty) && mpState === mpWriteBack, false.B)
+    io.bar.req.bits.wen   := Mux(mpValid, Mux(~recent(mpIndex).asBool(), meta(1).io.dirty, meta(0).io.dirty) && mpState === mpWriteBack, false.B)
                                           // io.cpu.req.bits.wen)
     io.bar.req.valid := Mux(mpValid, mpValid && !io.bar.resp.valid, false.B)
     mpRefillLine     := io.bar.resp.bits.rdata.asTypeOf(chiselTypeOf(mpRefillLine))
@@ -183,14 +193,14 @@ class DCache extends Module with CacheConfig with MemAccessType {
         mpMask   := hpMask
         mpShift  := hpShift
 
-        when (hpTag(0)) {
-            mpState     := Mux(meta(1).io.dirty, mpWriteBack, mpRefill)
-            mpDirtyAddr := Cat(meta(1).io.tagFetch, hpIndex, 0.U(offsetBits.W))
-            mpDirtyData := hpFetchLine(1).asTypeOf(chiselTypeOf(mpDirtyData))
-        }.otherwise {
+        when (recent(hpIndex).asBool()) { // recent is 1, so lru is 0
             mpState     := Mux(meta(0).io.dirty, mpWriteBack, mpRefill)
             mpDirtyAddr := Cat(meta(0).io.tagFetch, hpIndex, 0.U(offsetBits.W))
             mpDirtyData := hpFetchLine(0).asTypeOf(chiselTypeOf(mpDirtyData))
+        }.otherwise {
+            mpState     := Mux(meta(1).io.dirty, mpWriteBack, mpRefill)
+            mpDirtyAddr := Cat(meta(1).io.tagFetch, hpIndex, 0.U(offsetBits.W))
+            mpDirtyData := hpFetchLine(1).asTypeOf(chiselTypeOf(mpDirtyData))
         }
     }
     val mpWriteWord = ((mpMask & mpReq.wdata) << mpShift).asUInt() | ((~(mpMask << mpShift)).asUInt() & mpRefillLine(mpOffset))
@@ -203,10 +213,10 @@ class DCache extends Module with CacheConfig with MemAccessType {
                 mpState := Mux(io.bar.resp.valid, mpRefill, mpState)
             }
             is (mpRefill) { // clean
-                when (hpTag(0)) {
-                    meta(1).io.update := true.B
-                }.otherwise {
+                when (recent(hpIndex).asBool()) {
                     meta(0).io.update := true.B
+                }.otherwise {
+                    meta(1).io.update := true.B
                 }
                 mpRespValid := mpWriteCache
             }
